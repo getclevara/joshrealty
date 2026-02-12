@@ -34,25 +34,21 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-video-wrap">
-    <video autoplay muted loop playsinline poster="https://images.pexels.com/videos/4134979/pexels-photo-4134979.jpeg?auto=compress&cs=tinysrgb&w=1920">
+    <video autoplay muted loop playsinline id="heroVideo">
       <!-- 
-        REPLACE THIS with your own South Florida drone footage, or download free from:
-        https://www.pexels.com/video/drone-of-miami-19109604/
-        https://www.pexels.com/video/praia-mar-miami-drones-4134979/
-        https://www.pexels.com/search/videos/miami%20beach/
-        
-        Save the .mp4 file to your project as /videos/hero.mp4 and update src below:
+        VIDEO SETUP: Download one of these free videos and save as assets/video/hero.mp4:
+        1. https://www.pexels.com/video/drone-of-miami-19109604/
+        2. https://www.pexels.com/video/praia-mar-miami-drones-4134979/
+        3. https://pixabay.com/videos/search/miami/
+        Then change the src below to: assets/video/hero.mp4
       -->
-      <source src="https://videos.pexels.com/video-files/4134979/4134979-hd_1920_1080_30fps.mp4" type="video/mp4">
+      <source src="assets/video/hero.mp4" type="video/mp4">
     </video>
     <div class="hero-video-overlay"></div>
   </div>
   <div class="container">
     <div class="hero-content">
-      <div class="hero-badge">
-        <div class="hero-badge-dot"></div>
-        <span>Celebrating 25 Years</span>
-      </div>
+      <p class="hero-since">Since 2001  //  South Florida</p>
       <h1>Transforming Dreams Into <em>Forever Homes</em></h1>
       <p class="hero-text">For 25 years, Josh Realty has been more than a brokerage. Built on faith, named after a promise, and driven by a commitment to the families of South Florida.</p>
       <div class="hero-actions">
@@ -94,28 +90,28 @@
   <div class="container">
     <div class="search-bar">
       <div class="search-tab-group">
-        <button class="search-tab active">Buy</button>
-        <button class="search-tab">Rent</button>
-        <button class="search-tab">Sold</button>
+        <button class="search-tab active" data-type="buy" onclick="setSearchType(this)">Buy</button>
+        <button class="search-tab" data-type="rent" onclick="setSearchType(this)">Rent</button>
+        <button class="search-tab" data-type="sold" onclick="setSearchType(this)">Sold</button>
       </div>
       <div class="search-inputs">
-        <input type="text" class="search-field" placeholder="City, neighborhood, ZIP, or address...">
-        <select class="search-select">
-          <option>All Property Types</option>
-          <option>Single Family</option>
-          <option>Condo/Townhouse</option>
-          <option>Multi-Family</option>
-          <option>Land</option>
+        <input type="text" class="search-field" id="searchLocation" placeholder="City, neighborhood, ZIP, or address..." value="Fort Lauderdale">
+        <select class="search-select" id="searchType">
+          <option value="">All Property Types</option>
+          <option value="single_family">Single Family</option>
+          <option value="condo">Condo/Townhouse</option>
+          <option value="multi_family">Multi-Family</option>
+          <option value="land">Land</option>
         </select>
-        <select class="search-select">
-          <option>Any Price</option>
-          <option>Under $300K</option>
-          <option>$300K - $500K</option>
-          <option>$500K - $750K</option>
-          <option>$750K - $1M</option>
-          <option>$1M+</option>
+        <select class="search-select" id="searchPrice">
+          <option value="">Any Price</option>
+          <option value="300000">Under $300K</option>
+          <option value="300000-500000">$300K - $500K</option>
+          <option value="500000-750000">$500K - $750K</option>
+          <option value="750000-1000000">$750K - $1M</option>
+          <option value="1000000">$1M+</option>
         </select>
-        <button class="search-btn">
+        <button class="search-btn" onclick="runSearch()">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
           Search
         </button>
@@ -237,53 +233,53 @@
       <p class="section-subtitle">Everything you need to buy, own, and thrive in South Florida. No strings attached. Just genuine help from people who call this place home.</p>
     </div>
     <div class="tools-grid">
-      <div class="tool-card reveal">
-        <div class="tool-card-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <h3>Hurricane Readiness Kit</h3>
-        <p>Complete insurance guide, preparation checklist, and recovery steps every Florida homeowner needs. Updated for 2026 season.</p>
-        <span class="tool-card-badge">Free Download</span>
-      </div>
-      <div class="tool-card reveal reveal-delay-1">
+      <a href="tools/true-cost-calculator.html" class="tool-card reveal" style="text-decoration:none;color:inherit;">
         <div class="tool-card-icon">
           <svg viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
         </div>
         <h3>True Cost Calculator</h3>
         <p>What can you actually afford in South Florida? Factor in property taxes, insurance, HOA, flood zones, and maintenance - not just the mortgage.</p>
         <span class="tool-card-badge">Interactive Tool</span>
-      </div>
-      <div class="tool-card reveal reveal-delay-2">
-        <div class="tool-card-icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-        </div>
-        <h3>Relocation Guide</h3>
-        <p>Moving to South Florida? Cost of living comparisons, school ratings, cultural communities, job market data, and real talk about what to expect.</p>
-        <span class="tool-card-badge">Comprehensive Guide</span>
-      </div>
-      <div class="tool-card reveal">
-        <div class="tool-card-icon">
-          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        </div>
-        <h3>Home Value Tracker</h3>
-        <p>Get quarterly updates on your home&rsquo;s estimated value and neighborhood trends. Know what your property is worth - always.</p>
-        <span class="tool-card-badge">Free Updates</span>
-      </div>
-      <div class="tool-card reveal reveal-delay-1">
+      </a>
+      <a href="tools/first-time-buyer.html" class="tool-card reveal reveal-delay-1" style="text-decoration:none;color:inherit;">
         <div class="tool-card-icon">
           <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
         </div>
         <h3>First-Time Buyer Roadmap</h3>
         <p>Step-by-step guide specific to Florida. Homestead exemption, documentary stamps, title insurance, and every detail between pre-approval and keys.</p>
-        <span class="tool-card-badge">Step-by-Step</span>
-      </div>
-      <div class="tool-card reveal reveal-delay-2">
+        <span class="tool-card-badge">Interactive Guide</span>
+      </a>
+      <a href="tools/relocation-guide.html" class="tool-card reveal reveal-delay-2" style="text-decoration:none;color:inherit;">
+        <div class="tool-card-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        </div>
+        <h3>Relocation Guide</h3>
+        <p>Moving to South Florida? Cost of living, neighborhoods, schools, insurance, taxes, and real talk from people who've helped 1,200+ families make the move.</p>
+        <span class="tool-card-badge">Interactive Guide</span>
+      </a>
+      <a href="tools/maintenance-calendar.html" class="tool-card reveal" style="text-decoration:none;color:inherit;">
         <div class="tool-card-icon">
           <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
         </div>
         <h3>Homeowner Maintenance Calendar</h3>
-        <p>Florida-specific maintenance schedule: roof checks, AC cycles, hurricane prep timeline, pool care, pest control. Never miss a critical date.</p>
-        <span class="tool-card-badge">Downloadable</span>
+        <p>Month-by-month maintenance schedule built for South Florida. Check tasks off as you go - your progress saves automatically.</p>
+        <span class="tool-card-badge">Interactive Calendar</span>
+      </a>
+      <div class="tool-card reveal reveal-delay-1">
+        <div class="tool-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Hurricane Readiness Kit</h3>
+        <p>Complete insurance guide, preparation checklist, and recovery steps every Florida homeowner needs. Launches before hurricane season.</p>
+        <span class="tool-card-badge">Launching May 2026</span>
+      </div>
+      <div class="tool-card reveal reveal-delay-2">
+        <div class="tool-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Home Value Tracker</h3>
+        <p>Get quarterly updates on your home's estimated value and neighborhood trends. Know what your property is worth - always.</p>
+        <span class="tool-card-badge">Launching Summer 2026</span>
       </div>
     </div>
   </div>

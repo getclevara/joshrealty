@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hurricane Readiness Kit | Josh Realty Inc.</title>
+<meta name="description" content="The complete Florida hurricane preparation checklist, insurance guide, and recovery plan. Free from Josh Realty Inc.">
+<meta property="og:title" content="Hurricane Readiness Kit - Are You Ready?">
+<meta property="og:description" content="Complete hurricane prep checklist, insurance guide, and recovery plan for South Florida homeowners. Free from Josh Realty Inc.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --charcoal: #2C2825;
+  --warm-black: #1A1816;
+  --amber: #E8913A;
+  --amber-dark: #C97A2E;
+  --amber-glow: rgba(232,145,58,0.12);
+  --red: #D94F3D;
+  --green: #5BA67A;
+  --cream: #FAF7F2;
+  --sand: #E8E0D0;
+  --text: #3A352F;
+  --text-mid: #6B675F;
+  --text-light: #9A9488;
+  --white: #FFFFFF;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); color: var(--text); background: var(--cream); }
+
+/* SHARE BAR - fixed bottom */
+.share-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--warm-black);
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  z-index: 100;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.share-bar p {
+  color: rgba(255,255,255,0.5);
+  font-size: 13px;
+  font-weight: 500;
+  margin-right: 8px;
+}
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: none;
+  color: rgba(255,255,255,0.7);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+.share-btn:hover { background: rgba(255,255,255,0.08); color: #fff; border-color: rgba(255,255,255,0.3); }
+.share-btn.copy-link { border-color: var(--amber); color: var(--amber); }
+.share-btn.copy-link:hover { background: var(--amber); color: var(--warm-black); }
+.share-btn svg { width: 14px; height: 14px; }
+.share-toast {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--green);
+  color: #fff;
+  padding: 10px 24px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+  z-index: 101;
+}
+.share-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* NAV BACK */
+.tool-nav {
+  padding: 20px 0;
+  background: var(--white);
+  border-bottom: 1px solid var(--sand);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.tool-nav .container { display: flex; align-items: center; justify-content: space-between; }
+.tool-nav a {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-mid);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s;
+}
+.tool-nav a:hover { color: var(--text); }
+.tool-nav-brand {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.container { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+
+/* HERO */
+.tool-hero {
+  padding: 80px 0 60px;
+  text-align: center;
+  position: relative;
+}
+.tool-hero-icon {
+  width: 72px;
+  height: 72px;
+  background: var(--amber-glow);
+  border: 2px solid var(--amber);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 28px;
+  animation: pulse-ring 2s ease-in-out infinite;
+}
+@keyframes pulse-ring {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(232,145,58,0.3); }
+  50% { box-shadow: 0 0 0 12px rgba(232,145,58,0); }
+}
+.tool-hero-icon svg { width: 32px; height: 32px; stroke: var(--amber); fill: none; stroke-width: 1.5; }
+.tool-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5vw, 52px);
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 16px;
+  line-height: 1.15;
+}
+.tool-hero p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--text-mid);
+  max-width: 600px;
+  margin: 0 auto 32px;
+}
+.tool-hero-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+.tool-hero-meta span { display: flex; align-items: center; gap: 6px; }
+.tool-hero-meta svg { width: 14px; height: 14px; stroke: var(--amber); fill: none; stroke-width: 2; }
+
+/* READINESS SCORE */
+.score-section {
+  background: var(--warm-black);
+  padding: 48px;
+  margin: 0 auto 60px;
+  max-width: 880px;
+  position: relative;
+  overflow: hidden;
+}
+.score-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(232,145,58,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.score-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+.score-header h2 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  color: #fff;
+  font-weight: 500;
+}
+.score-display {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+.score-number {
+  font-family: var(--font-mono);
+  font-size: 48px;
+  font-weight: 500;
+  color: var(--amber);
+  line-height: 1;
+}
+.score-total {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  color: rgba(255,255,255,0.3);
+}
+.score-bar-wrap {
+  height: 6px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.score-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--red) 0%, var(--amber) 50%, var(--green) 100%);
+  border-radius: 3px;
+  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 0%;
+}
+.score-label {
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+  text-align: center;
+}
+
+/* CHECKLIST SECTIONS */
+.checklist-section {
+  margin-bottom: 48px;
+}
+.checklist-section-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 2px solid var(--sand);
+  margin-bottom: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+.checklist-section-header:hover .section-toggle { background: var(--sand); }
+.section-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--amber-glow);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.section-icon svg { width: 22px; height: 22px; stroke: var(--amber); fill: none; stroke-width: 1.5; }
+.section-info { flex: 1; }
+.section-info h2 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+.section-info p { font-size: 13px; color: var(--text-light); }
+.section-count {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-light);
+  background: var(--sand);
+  padding: 4px 12px;
+  border-radius: 4px;
+}
+.section-count .done { color: var(--green); }
+.section-toggle {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.section-toggle svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--text-light);
+  fill: none;
+  stroke-width: 2;
+  transition: transform 0.3s;
+}
+.checklist-section.collapsed .section-toggle svg { transform: rotate(-90deg); }
+.checklist-section.collapsed .checklist-items { display: none; }
+
+/* CHECKLIST ITEMS */
+.checklist-items { padding: 8px 0; }
+.check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+  user-select: none;
+}
+.check-item:hover { background: rgba(0,0,0,0.02); }
+.check-box {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--sand);
+  border-radius: 5px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+  transition: all 0.2s;
+}
+.check-item.checked .check-box {
+  background: var(--green);
+  border-color: var(--green);
+}
+.check-box svg { width: 14px; height: 14px; stroke: #fff; fill: none; stroke-width: 3; opacity: 0; transition: opacity 0.2s; }
+.check-item.checked .check-box svg { opacity: 1; }
+.check-content { flex: 1; }
+.check-content strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 3px;
+  transition: color 0.2s;
+}
+.check-item.checked .check-content strong { color: var(--text-light); text-decoration: line-through; }
+.check-content span {
+  font-size: 13px;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+.check-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 3px;
+  margin-top: 4px;
+  display: inline-block;
+}
+.check-tag.essential { background: rgba(217,79,61,0.1); color: var(--red); }
+.check-tag.recommended { background: var(--amber-glow); color: var(--amber-dark); }
+
+/* INSURANCE EXPLAINER */
+.insurance-section {
+  background: var(--white);
+  border: 1px solid var(--sand);
+  padding: 48px;
+  margin: 60px auto;
+}
+.insurance-section h2 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.insurance-section > p {
+  font-size: 15px;
+  color: var(--text-mid);
+  margin-bottom: 32px;
+  line-height: 1.7;
+}
+.insurance-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.insurance-card {
+  padding: 28px;
+  border: 1px solid var(--sand);
+  border-radius: 8px;
+  transition: border-color 0.2s;
+}
+.insurance-card:hover { border-color: var(--amber); }
+.insurance-card h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.insurance-card p {
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+.insurance-card .cost {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--amber-dark);
+  background: var(--amber-glow);
+  padding: 6px 12px;
+  border-radius: 4px;
+  display: inline-block;
+}
+.insurance-card .warning {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--red);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+.insurance-card .warning svg { width: 14px; height: 14px; stroke: var(--red); fill: none; stroke-width: 2; }
+
+/* DEDUCTIBLE EXPLAINER */
+.deductible-box {
+  background: #F9F6F0;
+  border: 1px solid var(--sand);
+  padding: 32px;
+  margin-top: 24px;
+  grid-column: 1 / -1;
+  border-radius: 8px;
+}
+.deductible-box h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+.deductible-box p {
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+.deductible-calc {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.deductible-calc label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+.deductible-calc input {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  padding: 10px 16px;
+  border: 2px solid var(--sand);
+  background: var(--white);
+  color: var(--text);
+  width: 180px;
+  transition: border-color 0.2s;
+}
+.deductible-calc input:focus { outline: none; border-color: var(--amber); }
+.deductible-result {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--text);
+  background: var(--white);
+  border: 1px solid var(--sand);
+  padding: 10px 16px;
+  border-radius: 6px;
+  min-width: 280px;
+}
+.deductible-result strong { color: var(--red); }
+
+/* TIMELINE */
+.timeline-section {
+  margin: 60px auto;
+}
+.timeline-section h2 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.timeline-section > p {
+  font-size: 15px;
+  color: var(--text-mid);
+  margin-bottom: 32px;
+}
+.timeline {
+  position: relative;
+  padding-left: 32px;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: var(--sand);
+}
+.timeline-item {
+  position: relative;
+  padding: 0 0 32px 24px;
+}
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-dot {
+  position: absolute;
+  left: -28px;
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  background: var(--cream);
+  border: 3px solid var(--amber);
+  border-radius: 50%;
+}
+.timeline-item.danger .timeline-dot { border-color: var(--red); }
+.timeline-item.safe .timeline-dot { border-color: var(--green); }
+.timeline-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--amber-dark);
+  margin-bottom: 6px;
+}
+.timeline-item.danger .timeline-label { color: var(--red); }
+.timeline-item.safe .timeline-label { color: var(--green); }
+.timeline-item h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.timeline-item p {
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 1.6;
+}
+
+/* FOOTER CTA */
+.tool-cta {
+  background: var(--warm-black);
+  padding: 64px 0;
+  text-align: center;
+  margin-bottom: 60px;
+}
+.tool-cta h2 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+.tool-cta p {
+  font-size: 15px;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 28px;
+}
+.tool-cta a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  background: var(--amber);
+  color: var(--warm-black);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.tool-cta a:hover { background: var(--amber-dark); }
+
+/* BRANDING FOOTER */
+.tool-footer {
+  text-align: center;
+  padding: 40px 0 100px;
+  font-size: 13px;
+  color: var(--text-light);
+}
+.tool-footer a { color: var(--amber-dark); text-decoration: none; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .score-section { padding: 32px 24px; margin: 0 16px 48px; }
+  .score-header { flex-direction: column; gap: 12px; text-align: center; }
+  .insurance-section { padding: 32px 20px; margin: 48px 16px; }
+  .insurance-grid { grid-template-columns: 1fr; }
+  .deductible-calc { flex-direction: column; align-items: flex-start; }
+  .deductible-result { min-width: auto; width: 100%; }
+  .share-bar { flex-wrap: wrap; gap: 8px; padding: 12px 16px; }
+  .share-bar p { width: 100%; text-align: center; margin-right: 0; margin-bottom: 4px; }
+  .tool-hero-meta { flex-direction: column; gap: 8px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="tool-nav">
+  <div class="container">
+    <a href="../index.html">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back to Josh Realty
+    </a>
+    <span class="tool-nav-brand">Josh Realty</span>
+  </div>
+</nav>
+
+<section class="tool-hero">
+  <div class="container">
+    <div class="tool-hero-icon">
+      <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+    </div>
+    <h1>Hurricane Readiness Kit</h1>
+    <p>The complete preparation checklist, insurance breakdown, and recovery timeline every South Florida homeowner needs. Check off items as you go.</p>
+    <div class="tool-hero-meta">
+      <span>
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        2026 Season Ready
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Interactive Checklist
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        5 Min to Complete
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- READINESS SCORE -->
+<div class="score-section" id="scoreSection">
+  <div class="score-header">
+    <h2>Your Readiness Score</h2>
+    <div class="score-display">
+      <span class="score-number" id="scoreNum">0</span>
+      <span class="score-total" id="scoreTotal">/0</span>
+    </div>
+  </div>
+  <div class="score-bar-wrap">
+    <div class="score-bar" id="scoreBar"></div>
+  </div>
+  <p class="score-label" id="scoreLabel">Start checking items to build your readiness score</p>
+</div>
+
+<!-- BEFORE THE STORM -->
+<div class="container">
+  <div class="checklist-section" data-section="before">
+    <div class="checklist-section-header" onclick="toggleSection(this)">
+      <div class="section-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="section-info">
+        <h2>Before the Storm</h2>
+        <p>Preparation is everything. Do these before hurricane season starts (June 1).</p>
+      </div>
+      <span class="section-count"><span class="done">0</span>/<span class="total">0</span></span>
+      <div class="section-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </div>
+    <div class="checklist-items">
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="check-content">
+          <strong>Review your insurance policies</strong>
+          <span>Confirm you have wind, flood, AND homeowners coverage. They are separate policies in Florida. Review your deductibles (see calculator below).</span>
+          <span class="check-tag essential">Essential</span>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="check-content">
+          <strong>Photograph every room and valuable item</strong>
+          <span>Document your belongings on video. Open every drawer, every closet. Upload to cloud storage. This is your proof for insurance claims.</span>
+          <span class="check-tag essential">Essential</span>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="check-content">
+          <strong>Get hurricane shutters or impact windows</strong>
+          <span>If you don't have permanent shutters, buy plywood (5/8" minimum) and pre-cut it to your window sizes. Label each piece. Store them accessible.</span>
+          <span class="check-tag essential">Essential</span>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="check-content">
+          <strong>Build your supply kit</strong>
+          <span>Water (1 gallon per person per day, 7 days minimum), non-perishable food, manual can opener, medications, first aid kit, flashlights, batteries, cash in small bills.</span>
+          <span class="check-tag essential">Essential</span>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="check-content">
+          <strong>Know your evacuation zone</strong>
+          <span>Look up your zone at KnowYourZone.com. Know your nearest shelter. Plan two routes out. Fill your car's gas tank early.</span>
+          <span class="check-tag essential">Essential</span>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="check-content">
+          <strong>Trim trees and clear your yard</strong>
+          <span>Dead branches become projectiles. Trim trees away from your home and power lines. Remove or secure anything in your yard that can fly.</span>
+          <span class="check-tag recommended">Recommended</span>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="check-content">
+          <strong>Check your roof</strong>
+          <span>Have a professional inspect it. Loose shingles or tiles will fail. Florida law: if your roof is 25%+ damaged, you must bring the entire roof to current code.</span>
+          <span class="check-tag recommended">Recommended</span>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="check-content">
+          <strong>Secure important documents</strong>
+          <span>Insurance policies, deed, IDs, passports, birth certificates, medical records. Put originals in a waterproof container. Store digital copies in the cloud.</span>
+          <span class="check-tag essential">Essential</span>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="check-content">
+          <strong>Get a generator or battery backup</strong>
+          <span>Power outages can last weeks. If you get a generator, NEVER run it indoors. Have fuel stored safely. Consider a portable power station as a safer alternative.</span>
+          <span class="check-tag recommended">Recommended</span>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="check-content">
+          <strong>Fill prescriptions early</strong>
+          <span>Get at least a 30-day supply of all medications. Keep a list of medications, dosages, and pharmacy contact info in your emergency kit.</span>
+          <span class="check-tag essential">Essential</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DURING THE STORM -->
+  <div class="checklist-section" data-section="during">
+    <div class="checklist-section-header" onclick="toggleSection(this)">
+      <div class="section-icon">
+        <svg viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg>
+      </div>
+      <div class="section-info">
+        <h2>During the Storm</h2>
+        <p>What to do when the hurricane is hitting. Safety first, everything else second.</p>
+      </div>
+      <span class="section-count"><span class="done">0</span>/<span class="total">0</span></span>
+      <div class="section-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </div>
+    <div class="checklist-items">
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="check-content">
+          <strong>Stay inside an interior room</strong>
+          <span>Bathroom, closet, or hallway with no windows. Stay away from all windows and glass doors. If you hear breaking glass, do not investigate.</span>
+          <span class="check-tag essential">Essential</span>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="check-content">
+          <strong>Do NOT go outside during the eye</strong>
+          <span>The calm is temporary. The back half of the storm often hits harder than the front. Stay inside until authorities give the all-clear.</span>
+          <span class="check-tag essential">Essential</span>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="check-content">
+          <strong>Keep your phone charged and on low-power mode</strong>
+          <span>Conserve battery. Download your county's emergency app beforehand. Text instead of call to keep lines open.</span>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="check-content">
+          <strong>Fill bathtubs with water</strong>
+          <span>Use for flushing toilets if water service is lost. Keep your drinking water supply separate and sealed.</span>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="check-content">
+          <strong>Turn refrigerator and freezer to coldest settings</strong>
+          <span>Food stays cold longer when power goes out. Keep doors closed. A full freezer holds temperature for about 48 hours.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AFTER THE STORM -->
+  <div class="checklist-section" data-section="after">
+    <div class="checklist-section-header" onclick="toggleSection(this)">
+      <div class="section-icon">
+        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      </div>
+      <div class="section-info">
+        <h2>After the Storm</h2>
+        <p>Recovery steps. Document everything. Move quickly on insurance claims.</p>
+      </div>
+      <span class="section-count"><span class="done">0</span>/<span class="total">0</span></span>
+      <div class="section-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </div>
+    <div class="checklist-items">
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="check-content">
+          <strong>Document ALL damage immediately</strong>
+          <span>Photos and videos of everything before you touch it. Timestamp matters. This is your evidence for insurance claims.</span>
+          <span class="check-tag essential">Essential</span>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="check-content">
+          <strong>File your insurance claim within 48 hours</strong>
+          <span>Don't wait. Call your insurer immediately. File wind AND flood claims separately if applicable. Get a claim number in writing.</span>
+          <span class="check-tag essential">Essential</span>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="check-content">
+          <strong>Watch for downed power lines</strong>
+          <span>Assume all downed lines are live. Stay at least 35 feet away. Report them to FPL at 1-800-4-OUTAGE.</span>
+          <span class="check-tag essential">Essential</span>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="check-content">
+          <strong>Avoid flood water</strong>
+          <span>Standing water can be contaminated with sewage, chemicals, and debris. Don't drive through it. 6 inches of moving water can knock you down.</span>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="check-content">
+          <strong>Make temporary repairs to prevent further damage</strong>
+          <span>Tarp a damaged roof. Board broken windows. Keep receipts for everything. Your insurance covers reasonable temporary repairs.</span>
+          <span class="check-tag recommended">Recommended</span>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="check-content">
+          <strong>Beware of scam contractors</strong>
+          <span>Never pay upfront. Get multiple estimates. Verify licenses at MyFloridaLicense.com. Don't sign an Assignment of Benefits (AOB) without legal advice.</span>
+          <span class="check-tag essential">Essential</span>
+        </div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="check-content">
+          <strong>Check on your neighbors</strong>
+          <span>Especially elderly neighbors and those who live alone. Community matters most in recovery.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INSURANCE EXPLAINER -->
+<div class="container">
+  <div class="insurance-section">
+    <h2>Florida Insurance: What You Actually Need</h2>
+    <p>Most homeowners don't realize they need three separate policies. Standard homeowners insurance in Florida does NOT cover wind or flood damage. Here's the breakdown.</p>
+    <div class="insurance-grid">
+      <div class="insurance-card">
+        <h3>Homeowners (HO-3)</h3>
+        <p>Covers theft, fire, liability, and some water damage. Does NOT cover wind damage from named storms or flooding.</p>
+        <span class="cost">Avg: $4,200/yr in South FL</span>
+        <div class="warning">
+          <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          Does NOT cover hurricane wind damage
+        </div>
+      </div>
+      <div class="insurance-card">
+        <h3>Windstorm Insurance</h3>
+        <p>Covers wind damage from named storms. Required by most mortgage lenders. Often through Citizens Property Insurance if private options are too expensive.</p>
+        <span class="cost">Avg: $1,800-3,500/yr</span>
+        <div class="warning">
+          <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          Separate hurricane deductible (2-10% of home value)
+        </div>
+      </div>
+      <div class="insurance-card">
+        <h3>Flood Insurance (NFIP)</h3>
+        <p>Covers rising water, storm surge, and overflow. Required if you're in a FEMA flood zone. Available through the National Flood Insurance Program or private insurers.</p>
+        <span class="cost">Avg: $700-2,500/yr</span>
+        <div class="warning">
+          <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          30-day waiting period before coverage starts
+        </div>
+      </div>
+      <div class="insurance-card">
+        <h3>Loss of Use / ALE</h3>
+        <p>Covers hotel, food, and living expenses if your home is uninhabitable. Usually included in homeowners policy but check your limits.</p>
+        <span class="cost">Included in HO-3 (check limits)</span>
+      </div>
+
+      <!-- DEDUCTIBLE CALCULATOR -->
+      <div class="deductible-box">
+        <h3>Hurricane Deductible Calculator</h3>
+        <p>In Florida, hurricane deductibles are percentage-based, not flat amounts. A 2% deductible on a $500,000 home means you pay the first $10,000 out of pocket. Here's what yours would be:</p>
+        <div class="deductible-calc">
+          <label>Your Home's Insured Value:</label>
+          <input type="text" id="homeValue" placeholder="$400,000" oninput="calcDeductible()">
+          <div class="deductible-result" id="deductibleResult">
+            Enter your home value to see your deductible range
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STORM TIMELINE -->
+<div class="container">
+  <div class="timeline-section">
+    <h2>When a Storm is Coming: Your Timeline</h2>
+    <p>What to do at each stage as a hurricane approaches South Florida.</p>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-label">5 Days Out</div>
+        <h3>Monitor and Prepare</h3>
+        <p>Check your supplies. Review evacuation routes. Start fueling vehicles. Move outdoor furniture inside. Check on elderly neighbors. Top off prescriptions.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-label">3 Days Out</div>
+        <h3>Activate Your Plan</h3>
+        <p>Install shutters or plywood. Fill water containers. Freeze extra water bottles for coolers. Charge all devices and battery packs. Get cash from ATM. Gas up vehicles.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-label">1 Day Out</div>
+        <h3>Final Preparations</h3>
+        <p>Complete all shuttering. Move valuables to interior rooms and higher floors. Pack a go-bag if in an evacuation zone. Set freezer to coldest setting. Do laundry. Charge everything.</p>
+      </div>
+      <div class="timeline-item danger">
+        <div class="timeline-dot"></div>
+        <div class="timeline-label">Storm Hits</div>
+        <h3>Stay Safe, Stay Inside</h3>
+        <p>Interior room, away from windows. Listen to local officials. Do not go outside during the eye. Text instead of call. Keep a battery radio on local stations.</p>
+      </div>
+      <div class="timeline-item safe">
+        <div class="timeline-dot"></div>
+        <div class="timeline-label">All Clear</div>
+        <h3>Recovery Begins</h3>
+        <p>Document damage immediately. File insurance claims within 48 hours. Make temporary repairs. Check on neighbors. Avoid floodwater and downed power lines.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="tool-cta">
+  <div class="container">
+    <h2>Need Help with Your Home?</h2>
+    <p>Whether you're buying your first home or protecting the one you have, Josh Realty is here.</p>
+    <a href="../index.html">
+      Talk to Our Team
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<div class="tool-footer">
+  <p>A free resource from <a href="../index.html">Josh Realty Inc.</a> | Updated for 2026 Hurricane Season</p>
+</div>
+
+<!-- SHARE BAR -->
+<div class="share-bar">
+  <p>Share this with someone who needs it</p>
+  <button class="share-btn copy-link" onclick="copyLink()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+    Copy Link
+  </button>
+  <a class="share-btn" href="https://twitter.com/intent/tweet?text=Every%20South%20Florida%20homeowner%20needs%20this%20hurricane%20readiness%20checklist%20%F0%9F%8C%80&url=" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    Post
+  </a>
+  <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+    Share
+  </a>
+  <a class="share-btn" href="sms:?body=Check%20out%20this%20hurricane%20readiness%20checklist%20for%20South%20Florida%20homeowners%3A%20" target="_blank">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+    Text
+  </a>
+</div>
+<div class="share-toast" id="shareToast">Link copied to clipboard</div>
+
+<script>
+// Initialize counts
+document.querySelectorAll('.checklist-section').forEach(section => {
+  const items = section.querySelectorAll('.check-item');
+  section.querySelector('.total').textContent = items.length;
+});
+updateScore();
+
+function toggleCheck(el) {
+  el.classList.toggle('checked');
+  // Save state
+  const allItems = [...document.querySelectorAll('.check-item')];
+  const idx = allItems.indexOf(el);
+  const saved = JSON.parse(localStorage.getItem('hurricane-kit') || '{}');
+  saved[idx] = el.classList.contains('checked');
+  localStorage.setItem('hurricane-kit', JSON.stringify(saved));
+  
+  updateScore();
+  updateSectionCounts();
+}
+
+function updateScore() {
+  const total = document.querySelectorAll('.check-item').length;
+  const checked = document.querySelectorAll('.check-item.checked').length;
+  const pct = total > 0 ? (checked / total) * 100 : 0;
+  
+  document.getElementById('scoreNum').textContent = checked;
+  document.getElementById('scoreTotal').textContent = '/' + total;
+  document.getElementById('scoreBar').style.width = pct + '%';
+  
+  const label = document.getElementById('scoreLabel');
+  if (pct === 0) label.textContent = 'Start checking items to build your readiness score';
+  else if (pct < 30) label.textContent = 'Getting started. Keep going.';
+  else if (pct < 60) label.textContent = 'Making progress. Focus on the essentials.';
+  else if (pct < 90) label.textContent = 'Almost there. You are ahead of most homeowners.';
+  else if (pct < 100) label.textContent = 'Nearly ready. Just a few items left.';
+  else label.textContent = 'Fully prepared. You are ready for hurricane season.';
+}
+
+function updateSectionCounts() {
+  document.querySelectorAll('.checklist-section').forEach(section => {
+    const items = section.querySelectorAll('.check-item');
+    const checked = section.querySelectorAll('.check-item.checked');
+    section.querySelector('.done').textContent = checked.length;
+  });
+}
+
+function toggleSection(header) {
+  header.closest('.checklist-section').classList.toggle('collapsed');
+}
+
+function calcDeductible() {
+  const raw = document.getElementById('homeValue').value.replace(/[^0-9]/g, '');
+  const val = parseInt(raw);
+  const el = document.getElementById('deductibleResult');
+  if (!val || val < 10000) {
+    el.innerHTML = 'Enter your home value to see your deductible range';
+    return;
+  }
+  const d2 = (val * 0.02).toLocaleString();
+  const d5 = (val * 0.05).toLocaleString();
+  const d10 = (val * 0.10).toLocaleString();
+  el.innerHTML = `2%: <strong>$${d2}</strong> &nbsp;|&nbsp; 5%: <strong>$${d5}</strong> &nbsp;|&nbsp; 10%: <strong>$${d10}</strong>`;
+}
+
+function copyLink() {
+  navigator.clipboard.writeText(window.location.href).then(() => {
+    const toast = document.getElementById('shareToast');
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2000);
+  });
+}
+
+// Restore saved state
+window.addEventListener('DOMContentLoaded', () => {
+  const saved = JSON.parse(localStorage.getItem('hurricane-kit') || '{}');
+  const allItems = [...document.querySelectorAll('.check-item')];
+  Object.keys(saved).forEach(idx => {
+    if (saved[idx] && allItems[idx]) {
+      allItems[idx].classList.add('checked');
+    }
+  });
+  updateScore();
+  updateSectionCounts();
+});
+</script>
+</body>
+</html>

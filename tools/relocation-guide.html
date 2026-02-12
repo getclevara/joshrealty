@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>South Florida Relocation Guide | Moving to Miami, Fort Lauderdale, Palm Beach | Josh Realty Inc.</title>
+<meta name="description" content="Everything you need to know about moving to South Florida. Cost of living comparisons, neighborhoods, schools, taxes, insurance, and honest advice from 25 years of local experience.">
+<meta property="og:title" content="South Florida Relocation Guide | Josh Realty">
+<meta property="og:description" content="Thinking about moving to South Florida? Cost comparisons, neighborhood guides, school ratings, tax info, and real talk from locals who've helped 1,200+ families relocate.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"How much does it cost to live in South Florida compared to other cities?","acceptedAnswer":{"@type":"Answer","text":"South Florida's cost of living is 15-25% above the national average, driven primarily by housing and insurance costs. A household earning $100,000 in Atlanta would need approximately $125,000-$135,000 in Miami for the same standard of living. However, Florida has no state income tax, which offsets some of the higher costs for higher earners."}},
+    {"@type":"Question","name":"What are the best neighborhoods in South Florida for families?","acceptedAnswer":{"@type":"Answer","text":"Top family neighborhoods include Coral Gables and Pinecrest in Miami-Dade (excellent public schools), Weston and Parkland in Broward (top-rated school districts), and Boca Raton and Jupiter in Palm Beach County. The best neighborhood depends on your budget, commute needs, and school priorities. Josh Realty Inc. specializes in matching families with the right South Florida community."}},
+    {"@type":"Question","name":"Does Florida have state income tax?","acceptedAnswer":{"@type":"Answer","text":"No. Florida has no state income tax, which is one of the biggest financial advantages of relocating here. However, this is partially offset by higher property taxes (averaging 0.86% statewide, but 1.02% in Miami-Dade), higher insurance costs (homeowners + wind + flood can total $6,000-12,000/year), and sales tax of 6-7% depending on county."}},
+    {"@type":"Question","name":"What is hurricane season in Florida and how do residents prepare?","acceptedAnswer":{"@type":"Answer","text":"Hurricane season runs June 1 through November 30, with peak activity August through October. Most South Florida residents live with this comfortably - modern building codes (post-Andrew, 1992) make homes significantly more resilient. Preparation includes having hurricane shutters or impact windows, maintaining insurance coverage, and keeping emergency supplies. Most years pass without a direct hit."}},
+    {"@type":"Question","name":"What should I know about Florida homeowners insurance before moving?","acceptedAnswer":{"@type":"Answer","text":"Florida homeowners insurance is among the most expensive in the nation, averaging $4,200/year in 2025. Unlike most states, you likely need three separate policies: standard homeowners (HO-3), windstorm/hurricane coverage (often through Citizens if private market is too expensive), and flood insurance (required in many areas, averaging $700-2,400/year). Budget $6,000-12,000+ annually for full coverage in South Florida."}}
+  ]
+}
+</script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap');
+:root {
+  --coral: #D4715E;
+  --coral-light: #E08B7A;
+  --coral-glow: rgba(212,113,94,0.08);
+  --teal: #4A8E8E;
+  --gold: #C4935A;
+  --warm-black: #2A2520;
+  --text: #3A352F;
+  --text-mid: #6B675F;
+  --text-light: #9B9589;
+  --sand: #E8E0D0;
+  --cream: #FAF7F2;
+  --white: #FFFFFF;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--font-body); background: var(--cream); color: var(--text); }
+.container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+.tool-nav { background: var(--warm-black); padding: 16px 0; position: sticky; top: 0; z-index: 100; }
+.tool-nav .container { display: flex; justify-content: space-between; align-items: center; }
+.tool-nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 8px; transition: color 0.2s; }
+.tool-nav a:hover { color: #fff; }
+.tool-nav-brand { color: rgba(255,255,255,0.3); font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
+
+.tool-hero { background: linear-gradient(135deg, var(--coral) 0%, #B85A4A 100%); padding: 72px 0; text-align: center; }
+.tool-hero h1 { font-family: var(--font-display); font-size: clamp(32px, 4vw, 44px); font-weight: 500; color: #fff; margin-bottom: 12px; }
+.tool-hero p { font-size: 16px; color: rgba(255,255,255,0.7); max-width: 600px; margin: 0 auto; line-height: 1.6; }
+
+/* TABS */
+.section-tabs {
+  display: flex; background: var(--white); border: 1px solid var(--sand);
+  margin-top: 40px; margin-bottom: 40px; overflow-x: auto;
+}
+.section-tab {
+  flex: 1; padding: 16px 12px; background: none; border: none;
+  font-family: var(--font-body); font-size: 13px; font-weight: 600; color: var(--text-light);
+  cursor: pointer; transition: all 0.2s; white-space: nowrap; text-align: center;
+  border-bottom: 3px solid transparent;
+}
+.section-tab:hover { color: var(--text); background: var(--cream); }
+.section-tab.active { color: var(--coral); border-bottom-color: var(--coral); }
+
+/* PANELS */
+.tab-panel { display: none; padding-bottom: 120px; }
+.tab-panel.active { display: block; }
+
+.panel-title { font-family: var(--font-display); font-size: 28px; font-weight: 500; margin-bottom: 8px; }
+.panel-subtitle { font-size: 14px; color: var(--text-light); margin-bottom: 32px; }
+
+/* COST COMPARISON */
+.comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 40px; }
+.compare-card {
+  background: var(--white); border: 1px solid var(--sand); padding: 28px;
+}
+.compare-card h3 {
+  font-family: var(--font-display); font-size: 20px; font-weight: 500; margin-bottom: 16px;
+}
+.compare-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 0; border-bottom: 1px solid var(--sand);
+}
+.compare-row:last-child { border-bottom: none; }
+.compare-label { font-size: 13px; color: var(--text-mid); }
+.compare-value { font-family: var(--font-mono); font-size: 14px; font-weight: 600; color: var(--text); }
+.compare-value.highlight { color: var(--coral); }
+.compare-value.good { color: var(--teal); }
+
+/* NEIGHBORHOOD CARDS */
+.neighborhood-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; margin-bottom: 40px; }
+.neighborhood-card {
+  background: var(--white); border: 1px solid var(--sand); overflow: hidden;
+}
+.neighborhood-card-img {
+  height: 160px; background-size: cover; background-position: center;
+}
+.neighborhood-card-body { padding: 24px; }
+.neighborhood-card-body h3 { font-family: var(--font-display); font-size: 18px; margin-bottom: 4px; }
+.neighborhood-card-body .county { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--coral); margin-bottom: 12px; }
+.neighborhood-card-body p { font-size: 13px; color: var(--text-mid); line-height: 1.6; margin-bottom: 16px; }
+.neighborhood-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.neighborhood-stat-label { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-light); }
+.neighborhood-stat-value { font-family: var(--font-mono); font-size: 14px; font-weight: 600; color: var(--text); }
+
+/* INFO BLOCKS */
+.info-block {
+  background: var(--white); border: 1px solid var(--sand); padding: 32px; margin-bottom: 20px;
+}
+.info-block h3 { font-family: var(--font-display); font-size: 20px; font-weight: 500; margin-bottom: 12px; }
+.info-block p { font-size: 14px; color: var(--text-mid); line-height: 1.7; margin-bottom: 12px; }
+.info-block p:last-child { margin-bottom: 0; }
+.info-block strong { color: var(--text); }
+
+.fl-callout {
+  background: #FEF9EE; border-left: 3px solid var(--gold);
+  padding: 20px 24px; margin: 20px 0;
+}
+.fl-callout-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+.fl-callout p { font-size: 14px; color: var(--text-mid); line-height: 1.7; margin: 0; }
+
+.honesty-block {
+  background: var(--coral-glow); border-left: 3px solid var(--coral);
+  padding: 20px 24px; margin: 20px 0;
+}
+.honesty-block-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--coral); margin-bottom: 6px; }
+.honesty-block p { font-size: 14px; color: var(--text-mid); line-height: 1.7; margin: 0; }
+
+/* DATA TABLE */
+.data-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+.data-table th {
+  text-align: left; font-size: 10px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--text-light); padding: 12px 16px;
+  border-bottom: 2px solid var(--sand); background: var(--cream);
+}
+.data-table td { padding: 12px 16px; border-bottom: 1px solid var(--sand); font-size: 14px; color: var(--text-mid); }
+.data-table td:first-child { font-weight: 600; color: var(--text); }
+.data-table td.mono { font-family: var(--font-mono); font-weight: 600; }
+
+/* CTA */
+.tool-cta { background: var(--warm-black); padding: 64px 0; text-align: center; }
+.tool-cta h2 { font-family: var(--font-display); font-size: 28px; color: #fff; font-weight: 500; margin-bottom: 12px; }
+.tool-cta p { font-size: 15px; color: rgba(255,255,255,0.5); margin-bottom: 28px; max-width: 500px; margin-left: auto; margin-right: auto; }
+.tool-cta a {
+  display: inline-flex; align-items: center; gap: 10px; padding: 16px 32px;
+  background: var(--coral); color: #fff; font-size: 13px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase; text-decoration: none; transition: background 0.2s;
+}
+.tool-cta a:hover { background: var(--coral-light); }
+
+.tool-footer { text-align: center; padding: 40px 0 100px; font-size: 13px; color: var(--text-light); }
+.tool-footer a { color: var(--coral); text-decoration: none; }
+
+/* SHARE */
+.share-bar {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 50;
+  background: var(--warm-black); padding: 14px 24px;
+  display: flex; align-items: center; justify-content: center; gap: 12px;
+}
+.share-bar p { font-size: 13px; color: rgba(255,255,255,0.4); margin-right: 8px; }
+.share-btn {
+  display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px;
+  background: rgba(255,255,255,0.08); border: none; color: rgba(255,255,255,0.7);
+  font-size: 12px; font-weight: 600; cursor: pointer; text-decoration: none; transition: background 0.2s;
+}
+.share-btn:hover { background: rgba(255,255,255,0.15); color: #fff; }
+.share-btn svg { width: 14px; height: 14px; }
+.share-toast {
+  position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%);
+  background: var(--coral); color: #fff; padding: 10px 24px;
+  font-size: 13px; font-weight: 600; opacity: 0; transition: opacity 0.3s; pointer-events: none; z-index: 60;
+}
+.share-toast.show { opacity: 1; }
+
+@media (max-width: 768px) {
+  .comparison-grid { grid-template-columns: 1fr; }
+  .neighborhood-grid { grid-template-columns: 1fr; }
+  .section-tabs { overflow-x: auto; }
+  .section-tab { min-width: max-content; padding: 14px 16px; font-size: 12px; }
+  .share-bar { flex-wrap: wrap; gap: 8px; padding: 12px 16px; }
+  .share-bar p { width: 100%; text-align: center; margin-right: 0; }
+}
+</style>
+</head>
+<body>
+
+<nav class="tool-nav">
+  <div class="container">
+    <a href="../index.html">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back to Josh Realty
+    </a>
+    <span class="tool-nav-brand">Josh Realty</span>
+  </div>
+</nav>
+
+<section class="tool-hero">
+  <div class="container">
+    <h1>South Florida Relocation Guide</h1>
+    <p>Everything you actually need to know about moving here. Not the tourist version. Cost of living, neighborhoods, schools, insurance, taxes, and the stuff nobody tells you until after you've signed.</p>
+  </div>
+</section>
+
+<div class="container">
+  <div class="section-tabs">
+    <button class="section-tab active" onclick="showTab('cost')">Cost of Living</button>
+    <button class="section-tab" onclick="showTab('neighborhoods')">Neighborhoods</button>
+    <button class="section-tab" onclick="showTab('taxes')">Taxes & Insurance</button>
+    <button class="section-tab" onclick="showTab('schools')">Schools</button>
+    <button class="section-tab" onclick="showTab('realtalk')">Real Talk</button>
+  </div>
+
+  <!-- COST OF LIVING -->
+  <div class="tab-panel active" id="panel-cost">
+    <h2 class="panel-title">What Does It Actually Cost to Live Here?</h2>
+    <p class="panel-subtitle">South Florida compared to where you might be coming from. All numbers based on 2025-2026 data.</p>
+
+    <div class="comparison-grid">
+      <div class="compare-card">
+        <h3>Housing (Median Home Price)</h3>
+        <div class="compare-row"><span class="compare-label">Miami-Dade County</span><span class="compare-value highlight">$520,000</span></div>
+        <div class="compare-row"><span class="compare-label">Broward County</span><span class="compare-value highlight">$445,000</span></div>
+        <div class="compare-row"><span class="compare-label">Palm Beach County</span><span class="compare-value highlight">$480,000</span></div>
+        <div class="compare-row"><span class="compare-label">National Median</span><span class="compare-value">$390,000</span></div>
+        <div class="compare-row"><span class="compare-label">Atlanta, GA</span><span class="compare-value">$375,000</span></div>
+        <div class="compare-row"><span class="compare-label">Charlotte, NC</span><span class="compare-value">$365,000</span></div>
+        <div class="compare-row"><span class="compare-label">New York City</span><span class="compare-value">$750,000</span></div>
+      </div>
+      <div class="compare-card">
+        <h3>Monthly Costs Beyond Mortgage</h3>
+        <div class="compare-row"><span class="compare-label">Property Tax (avg)</span><span class="compare-value">$400-600/mo</span></div>
+        <div class="compare-row"><span class="compare-label">All Insurance (3 policies)</span><span class="compare-value highlight">$500-1,000/mo</span></div>
+        <div class="compare-row"><span class="compare-label">Electricity (summer)</span><span class="compare-value">$200-350/mo</span></div>
+        <div class="compare-row"><span class="compare-label">Water/Sewer</span><span class="compare-value">$60-120/mo</span></div>
+        <div class="compare-row"><span class="compare-label">HOA (typical condo)</span><span class="compare-value">$300-800/mo</span></div>
+        <div class="compare-row"><span class="compare-label">Internet</span><span class="compare-value">$60-80/mo</span></div>
+        <div class="compare-row"><span class="compare-label">Gas (no heating cost)</span><span class="compare-value good">$0/mo</span></div>
+      </div>
+    </div>
+
+    <div class="fl-callout">
+      <div class="fl-callout-label">The Big Trade-Off</div>
+      <p><strong>No state income tax.</strong> If you earn $150,000, you're saving $7,000-12,000/year compared to states like New York, California, or New Jersey. For high earners, the tax savings alone can offset higher housing and insurance costs. Use our <a href="true-cost-calculator.html" style="color:var(--gold);font-weight:600;">True Cost Calculator</a> to run your specific numbers.</p>
+    </div>
+
+    <div class="info-block">
+      <h3>Groceries and Dining</h3>
+      <p>Groceries run about 5-10% above the national average. Publix is the dominant grocery chain and is reliable but not the cheapest. Costco, Aldi, and Sedano's (Latin grocery) offer better value. <strong>Dining out is competitive</strong> - Miami's restaurant scene is world-class with options at every price point. Expect $15-20 per person for casual dining, $40-80 for mid-range, and $100+ for fine dining.</p>
+    </div>
+
+    <div class="info-block">
+      <h3>Transportation</h3>
+      <p><strong>You need a car.</strong> Public transit exists (Metrorail in Miami, Tri-Rail between counties) but is not a substitute for driving. Average commute: 30-45 minutes. Gas prices typically match or slightly exceed the national average. Car insurance in Florida averages $2,500-3,500/year - the third highest in the nation. The Brightline train connects Miami, Fort Lauderdale, and West Palm Beach and is genuinely useful for that corridor.</p>
+    </div>
+  </div>
+
+  <!-- NEIGHBORHOODS -->
+  <div class="tab-panel" id="panel-neighborhoods">
+    <h2 class="panel-title">Finding Your Neighborhood</h2>
+    <p class="panel-subtitle">South Florida has dozens of distinct communities. Here's an honest overview of the most popular ones for relocators.</p>
+
+    <div class="neighborhood-grid">
+      <div class="neighborhood-card">
+        <div class="neighborhood-card-img" style="background-image:url('https://images.unsplash.com/photo-1535498730771-e735b998cd64?w=600&q=80')"></div>
+        <div class="neighborhood-card-body">
+          <h3>Coral Gables</h3>
+          <div class="county">Miami-Dade County</div>
+          <p>Tree-lined streets, Mediterranean architecture, top-rated schools. The "old money" feel of South Florida. Walking distance to shops and restaurants on Miracle Mile. Close to UM.</p>
+          <div class="neighborhood-stats">
+            <div><div class="neighborhood-stat-label">Median Home</div><div class="neighborhood-stat-value">$850K</div></div>
+            <div><div class="neighborhood-stat-label">Schools</div><div class="neighborhood-stat-value">A-rated</div></div>
+            <div><div class="neighborhood-stat-label">Vibe</div><div class="neighborhood-stat-value">Established</div></div>
+            <div><div class="neighborhood-stat-label">Best For</div><div class="neighborhood-stat-value">Families</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="neighborhood-card">
+        <div class="neighborhood-card-img" style="background-image:url('https://images.unsplash.com/photo-1506966953602-c20cc11f75e3?w=600&q=80')"></div>
+        <div class="neighborhood-card-body">
+          <h3>Weston</h3>
+          <div class="county">Broward County</div>
+          <p>Master-planned community with some of the best public schools in Florida. Safe, suburban, family-oriented. Large Venezuelan and Colombian communities. 30 min to Fort Lauderdale beach.</p>
+          <div class="neighborhood-stats">
+            <div><div class="neighborhood-stat-label">Median Home</div><div class="neighborhood-stat-value">$580K</div></div>
+            <div><div class="neighborhood-stat-label">Schools</div><div class="neighborhood-stat-value">A-rated</div></div>
+            <div><div class="neighborhood-stat-label">Vibe</div><div class="neighborhood-stat-value">Suburban</div></div>
+            <div><div class="neighborhood-stat-label">Best For</div><div class="neighborhood-stat-value">Young families</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="neighborhood-card">
+        <div class="neighborhood-card-img" style="background-image:url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=600&q=80')"></div>
+        <div class="neighborhood-card-body">
+          <h3>Boca Raton</h3>
+          <div class="county">Palm Beach County</div>
+          <p>Upscale but not pretentious. Great mix of beaches, dining, and family life. FAU and Lynn University give it energy. Strong job market in healthcare and tech. Excellent parks system.</p>
+          <div class="neighborhood-stats">
+            <div><div class="neighborhood-stat-label">Median Home</div><div class="neighborhood-stat-value">$550K</div></div>
+            <div><div class="neighborhood-stat-label">Schools</div><div class="neighborhood-stat-value">A/B-rated</div></div>
+            <div><div class="neighborhood-stat-label">Vibe</div><div class="neighborhood-stat-value">Balanced</div></div>
+            <div><div class="neighborhood-stat-label">Best For</div><div class="neighborhood-stat-value">Professionals</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="neighborhood-card">
+        <div class="neighborhood-card-img" style="background-image:url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80')"></div>
+        <div class="neighborhood-card-body">
+          <h3>Fort Lauderdale (Downtown/Las Olas)</h3>
+          <div class="county">Broward County</div>
+          <p>Urban energy without Miami intensity. Las Olas Boulevard is the heart - shops, restaurants, galleries. Growing tech scene. The beach is genuinely beautiful and less crowded than Miami Beach.</p>
+          <div class="neighborhood-stats">
+            <div><div class="neighborhood-stat-label">Median Home</div><div class="neighborhood-stat-value">$475K</div></div>
+            <div><div class="neighborhood-stat-label">Schools</div><div class="neighborhood-stat-value">B-rated</div></div>
+            <div><div class="neighborhood-stat-label">Vibe</div><div class="neighborhood-stat-value">Urban/coastal</div></div>
+            <div><div class="neighborhood-stat-label">Best For</div><div class="neighborhood-stat-value">Young pros</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="neighborhood-card">
+        <div class="neighborhood-card-img" style="background-image:url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80')"></div>
+        <div class="neighborhood-card-body">
+          <h3>Parkland</h3>
+          <div class="county">Broward County</div>
+          <p>Quiet, green, and family-focused. Known for Marjory Stoneman Douglas HS (the community rallied and rebuilt). Large lots, equestrian areas nearby. Top-tier schools consistently.</p>
+          <div class="neighborhood-stats">
+            <div><div class="neighborhood-stat-label">Median Home</div><div class="neighborhood-stat-value">$700K</div></div>
+            <div><div class="neighborhood-stat-label">Schools</div><div class="neighborhood-stat-value">A-rated</div></div>
+            <div><div class="neighborhood-stat-label">Vibe</div><div class="neighborhood-stat-value">Quiet/green</div></div>
+            <div><div class="neighborhood-stat-label">Best For</div><div class="neighborhood-stat-value">Families</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="neighborhood-card">
+        <div class="neighborhood-card-img" style="background-image:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80')"></div>
+        <div class="neighborhood-card-body">
+          <h3>Jupiter / Palm Beach Gardens</h3>
+          <div class="county">Palm Beach County</div>
+          <p>Northern Palm Beach has a distinctly different feel - more relaxed, more space. Jupiter beach, world-class golf, spring training baseball. Growing but still feels uncrowded.</p>
+          <div class="neighborhood-stats">
+            <div><div class="neighborhood-stat-label">Median Home</div><div class="neighborhood-stat-value">$620K</div></div>
+            <div><div class="neighborhood-stat-label">Schools</div><div class="neighborhood-stat-value">A-rated</div></div>
+            <div><div class="neighborhood-stat-label">Vibe</div><div class="neighborhood-stat-value">Relaxed coastal</div></div>
+            <div><div class="neighborhood-stat-label">Best For</div><div class="neighborhood-stat-value">Active lifestyle</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="honesty-block">
+      <div class="honesty-block-label">Honest Advice</div>
+      <p>Visit before you commit. Rent for 3-6 months if you can. Every neighborhood has a completely different feel, and "South Florida" is not one place - it's three counties spanning 100+ miles. What works for your family depends on your commute, school needs, cultural preferences, and lifestyle. That's exactly what we help people figure out.</p>
+    </div>
+  </div>
+
+  <!-- TAXES & INSURANCE -->
+  <div class="tab-panel" id="panel-taxes">
+    <h2 class="panel-title">Taxes, Insurance, and the Fine Print</h2>
+    <p class="panel-subtitle">The financial stuff that surprises most people moving to Florida.</p>
+
+    <div class="info-block">
+      <h3>The Tax Picture</h3>
+      <p><strong>No state income tax.</strong> This is real and it's significant. But Florida makes up revenue in other ways.</p>
+      <table class="data-table">
+        <thead><tr><th>Tax</th><th>Rate</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>State Income Tax</td><td class="mono" style="color:var(--teal)">0%</td><td>None. Period.</td></tr>
+          <tr><td>Sales Tax</td><td class="mono">6-7.5%</td><td>6% state + 0.5-1.5% county surtax. Miami-Dade: 7%, Broward: 7%, Palm Beach: 7%</td></tr>
+          <tr><td>Property Tax</td><td class="mono">0.86-1.2%</td><td>Miami-Dade avg: 1.02%. Homestead exemption saves up to $50K assessed value.</td></tr>
+          <tr><td>Documentary Stamp Tax</td><td class="mono">$0.70/$100</td><td>Paid at closing on property transfers. Miami-Dade adds $0.45/$100 surtax.</td></tr>
+          <tr><td>Intangible Tax</td><td class="mono">$0.20/$100</td><td>On new mortgages at closing.</td></tr>
+          <tr><td>Estate Tax</td><td class="mono" style="color:var(--teal)">0%</td><td>No state estate or inheritance tax.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="fl-callout">
+      <div class="fl-callout-label">File for Homestead Exemption</div>
+      <p>If this is your primary residence, <strong>file for Homestead Exemption by March 1 of the year after you buy.</strong> It saves up to $50,000 off your assessed value AND caps assessment increases at 3% per year (Save Our Homes amendment). This is free. Don't miss it. File at your county Property Appraiser's office.</p>
+    </div>
+
+    <div class="info-block">
+      <h3>Insurance: The Real Cost Nobody Mentions</h3>
+      <p>This is where South Florida gets expensive. You likely need <strong>three separate insurance policies:</strong></p>
+      <table class="data-table">
+        <thead><tr><th>Policy</th><th>Avg Annual Cost</th><th>What It Covers</th></tr></thead>
+        <tbody>
+          <tr><td>Homeowners (HO-3)</td><td class="mono">$4,200</td><td>Fire, theft, liability. Does NOT cover flood or wind in most cases.</td></tr>
+          <tr><td>Windstorm/Hurricane</td><td class="mono">$2,000-4,000</td><td>Hurricane and wind damage. Often through Citizens (state insurer of last resort).</td></tr>
+          <tr><td>Flood (NFIP)</td><td class="mono">$700-2,400</td><td>Flood damage. Required in FEMA flood zones. Recommended everywhere in South Florida.</td></tr>
+          <tr><td style="font-weight:700">Total</td><td class="mono" style="color:var(--coral);font-weight:700">$6,900-10,600/yr</td><td>$575-$883/month just for insurance.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="honesty-block">
+      <div class="honesty-block-label">What We Tell Every Client</div>
+      <p>Get insurance quotes BEFORE you close on a home. Insurance availability and cost vary dramatically by location, construction type, and roof age. A beautiful home with a 15-year-old roof may be nearly uninsurable at a reasonable cost. We help our clients factor this in from day one.</p>
+    </div>
+  </div>
+
+  <!-- SCHOOLS -->
+  <div class="tab-panel" id="panel-schools">
+    <h2 class="panel-title">Schools: What Families Need to Know</h2>
+    <p class="panel-subtitle">South Florida has excellent public and private school options, but quality varies significantly by area.</p>
+
+    <div class="info-block">
+      <h3>Public School Districts</h3>
+      <p><strong>Miami-Dade County Public Schools</strong> is the 4th largest district in the US. Overall district grade: B. But individual school quality ranges dramatically. The magnet and school choice programs are strong - you're not limited to your zoned school.</p>
+      <p><strong>Broward County Public Schools</strong> is the 6th largest. Some of the state's top-performing schools are here (Weston, Parkland, Coral Springs). The district offers robust magnet and charter options.</p>
+      <p><strong>Palm Beach County School District</strong> is consistently rated among the top large districts in Florida. Strong schools in Boca Raton, Jupiter, and Wellington.</p>
+    </div>
+
+    <table class="data-table">
+      <thead><tr><th>Area</th><th>Top Public Schools</th><th>School Grade</th><th>Avg Home Price (Zoned)</th></tr></thead>
+      <tbody>
+        <tr><td>Pinecrest / Palmetto Bay</td><td>Pinecrest Elementary, Palmetto MS, Palmetto SHS</td><td class="mono">A</td><td class="mono">$750K+</td></tr>
+        <tr><td>Weston</td><td>Manatee Bay, Cypress Bay HS</td><td class="mono">A</td><td class="mono">$550K+</td></tr>
+        <tr><td>Parkland</td><td>Heron Heights, MSD HS</td><td class="mono">A</td><td class="mono">$650K+</td></tr>
+        <tr><td>Coral Gables</td><td>Sunset Elementary, Coral Gables SHS</td><td class="mono">A</td><td class="mono">$800K+</td></tr>
+        <tr><td>Boca Raton</td><td>Addison Mizner, Olympic Heights</td><td class="mono">A/B</td><td class="mono">$500K+</td></tr>
+        <tr><td>Jupiter</td><td>Jupiter Elementary, Jupiter HS</td><td class="mono">A</td><td class="mono">$550K+</td></tr>
+      </tbody>
+    </table>
+
+    <div class="fl-callout">
+      <div class="fl-callout-label">School Choice in Florida</div>
+      <p>Florida has robust school choice. You can apply to magnet schools, charter schools, and inter-district transfer programs. You're not locked into your zoned school. Research options at your county's school choice office before you buy. Sometimes a more affordable neighborhood + school choice = better outcome than overpaying for a "school zone" address.</p>
+    </div>
+  </div>
+
+  <!-- REAL TALK -->
+  <div class="tab-panel" id="panel-realtalk">
+    <h2 class="panel-title">The Stuff Nobody Puts in the Brochure</h2>
+    <p class="panel-subtitle">After helping 1,200+ families move to South Florida, here's what we wish someone had told them upfront.</p>
+
+    <div class="info-block">
+      <h3>The Heat Is Real</h3>
+      <p>May through October is hot and humid. Not "oh it's a warm day" hot - genuinely oppressive if you're not used to it. Your AC will run almost continuously for 6 months. Your electric bill will reflect that ($200-350/month in summer). You'll plan outdoor activities for early morning or evening. You'll get used to it, but it takes a full year.</p>
+    </div>
+
+    <div class="info-block">
+      <h3>Traffic Is Part of the Deal</h3>
+      <p>I-95, the Palmetto, 826, the Turnpike - they're all congested during rush hours. A 15-mile commute can take 45 minutes. This is not a "it's getting worse" situation - it has been bad for decades. Factor commute into your neighborhood decision. Living close to work is worth a higher price per square foot.</p>
+    </div>
+
+    <div class="info-block">
+      <h3>Spanish Is Everywhere (and That's a Feature)</h3>
+      <p>Miami-Dade is 70%+ Hispanic. Many businesses operate primarily in Spanish. You don't need Spanish to live here, but knowing even basic conversational Spanish enriches your experience enormously. Broward and Palm Beach are more English-dominant but increasingly multilingual. The cultural diversity is genuine and one of the best things about living here.</p>
+    </div>
+
+    <div class="info-block">
+      <h3>Hurricanes: Respect, Don't Fear</h3>
+      <p>Yes, hurricanes are real. No, they don't hit every year. South Florida's building codes since Hurricane Andrew (1992) are among the strictest in the nation. Modern construction with impact windows handles most storms well. You prepare, you have a plan, you stay aware during season, and most years nothing happens. The people who struggle are the ones who don't prepare at all or who panic when a storm forms. Check out our <a href="hurricane-readiness.html" style="color:var(--coral);font-weight:600;">Hurricane Readiness Kit</a> for details.</p>
+    </div>
+
+    <div class="info-block">
+      <h3>The Social Scene Takes Effort</h3>
+      <p>South Florida is transient. People come and go. Building a social circle takes intentional effort - join a church, gym, or community group. Kids make it easier (school parent networks are strong). The good news: everyone here came from somewhere else, so people are generally open and welcoming. Nobody will judge you for being "new."</p>
+    </div>
+
+    <div class="info-block">
+      <h3>It's Worth It</h3>
+      <p>For all the caveats, people who move here and commit to it overwhelmingly love it. The weather (9 months of the year), the beaches, the cultural diversity, the food, the energy, the no-income-tax, the outdoor lifestyle, the proximity to the Caribbean and Latin America - there's a reason 1,000+ people move to Florida every day. The key is going in with clear eyes about the trade-offs.</p>
+    </div>
+  </div>
+</div>
+
+<section class="tool-cta">
+  <div class="container">
+    <h2>Thinking About the Move?</h2>
+    <p>We've helped families relocate from 30+ states and 15+ countries. Let's find the right neighborhood, the right home, and make sure the numbers work.</p>
+    <a href="../index.html#contact">Start a Conversation <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </div>
+</section>
+
+<div class="tool-footer">
+  <p>A free resource from <a href="../index.html">Josh Realty Inc.</a> | 25 years serving South Florida</p>
+</div>
+
+<div class="share-bar">
+  <p>Know someone considering the move?</p>
+  <button class="share-btn" onclick="copyLink()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+    Copy Link
+  </button>
+  <a class="share-btn" href="https://twitter.com/intent/tweet?text=Best%20South%20Florida%20relocation%20guide%20I%27ve%20found.%20Real%20costs%2C%20honest%20neighborhood%20breakdowns%2C%20no%20BS.&url=" target="_blank">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    Post
+  </a>
+  <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+    Share
+  </a>
+  <a class="share-btn" href="sms:?body=Thinking%20about%20moving%20to%20South%20Florida%3F%20This%20guide%20is%20really%20good%3A%20" target="_blank">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+    Text
+  </a>
+</div>
+<div class="share-toast" id="shareToast">Link copied to clipboard</div>
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.section-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('panel-' + id).classList.add('active');
+  event.target.classList.add('active');
+}
+
+function copyLink() {
+  navigator.clipboard.writeText(window.location.href).then(() => {
+    const t = document.getElementById('shareToast');
+    t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 2000);
+  });
+}
+</script>
+</body>
+</html>

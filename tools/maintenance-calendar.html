@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Florida Homeowner Maintenance Calendar | Josh Realty Inc.</title>
+<meta name="description" content="Month-by-month home maintenance schedule built for South Florida. AC, roof, hurricane prep, pool, pest control, landscaping - never miss a critical task.">
+<meta property="og:title" content="Florida Homeowner Maintenance Calendar | Josh Realty">
+<meta property="og:description" content="Your month-by-month home maintenance schedule, built for South Florida's climate. Free interactive tool from Josh Realty Inc.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- AEO: FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What home maintenance should I do monthly in Florida?", "acceptedAnswer": {"@type": "Answer", "text": "In Florida, monthly maintenance should include checking AC filters, inspecting for water intrusion after heavy rains, checking smoke detectors, and monitoring for pest activity. Florida's subtropical climate means higher humidity, faster mold growth, and more wear on HVAC systems than other states."}},
+    {"@type": "Question", "name": "How often should I service my AC in Florida?", "acceptedAnswer": {"@type": "Answer", "text": "Florida AC units should be professionally serviced twice a year - once before summer (March/April) and once before the mild season (October/November). Change filters monthly during summer when the unit runs continuously. The average AC lifespan in South Florida is 10-15 years due to heavy use."}},
+    {"@type": "Question", "name": "When should I inspect my roof in Florida?", "acceptedAnswer": {"@type": "Answer", "text": "Inspect your roof twice a year: once in spring before hurricane season (April/May) and once after hurricane season ends (December). Florida roofs typically last 15-20 years for shingles and 25-40 years for tile. After any major storm, do a visual inspection for missing shingles or tiles."}},
+    {"@type": "Question", "name": "What is the hurricane preparation timeline for Florida homeowners?", "acceptedAnswer": {"@type": "Answer", "text": "Hurricane season runs June 1 through November 30. Preparation should begin in May: check shutters/impact windows, trim trees, review insurance policies, stock emergency supplies, and test generators. This gives you time before peak season in August-October."}},
+    {"@type": "Question", "name": "How do I prevent mold in my Florida home?", "acceptedAnswer": {"@type": "Answer", "text": "Keep indoor humidity below 60% using your AC and dehumidifiers. Check for leaks monthly, especially around windows and in bathrooms. Clean bathroom exhaust fans quarterly. During Florida's wet season (June-September), run the AC even when temperatures are mild to control humidity."}}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Florida Home Maintenance Annual Schedule",
+  "description": "A month-by-month home maintenance calendar designed specifically for South Florida homeowners, covering AC, roof, hurricane prep, pool, pest control, and landscaping.",
+  "step": [
+    {"@type": "HowToStep", "name": "January", "text": "Test smoke and CO detectors. Check water heater for sediment. Inspect caulking around windows and doors."},
+    {"@type": "HowToStep", "name": "February-March", "text": "Schedule spring AC tune-up. Check irrigation system. Pressure wash exterior and driveway."},
+    {"@type": "HowToStep", "name": "April-May", "text": "Roof inspection before hurricane season. Trim trees away from house. Test hurricane shutters. Review insurance policies."},
+    {"@type": "HowToStep", "name": "June-August", "text": "Hurricane season active. Change AC filters monthly. Monitor for leaks during heavy rains. Check pool equipment."},
+    {"@type": "HowToStep", "name": "September-October", "text": "Schedule fall AC maintenance. Check for hurricane damage. Inspect garage door. Service generator."},
+    {"@type": "HowToStep", "name": "November-December", "text": "Post-hurricane season roof check. Flush water heater. Check attic insulation. Holiday electrical safety check."}
+  ],
+  "author": {"@type": "Organization", "name": "Josh Realty Inc.", "url": "https://joshrealtyinc.com"}
+}
+</script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap');
+:root {
+  --green: #4A7C59;
+  --green-light: #5E9B6F;
+  --green-glow: rgba(74,124,89,0.08);
+  --amber: #C4935A;
+  --red: #C45A5A;
+  --blue: #5A8EC4;
+  --warm-black: #2A2520;
+  --text: #3A352F;
+  --text-mid: #6B675F;
+  --text-light: #9B9589;
+  --sand: #E8E0D0;
+  --cream: #FAF7F2;
+  --white: #FFFFFF;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--font-body); background: var(--cream); color: var(--text); }
+.container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+/* NAV */
+.tool-nav { background: var(--warm-black); padding: 16px 0; position: sticky; top: 0; z-index: 100; }
+.tool-nav .container { display: flex; justify-content: space-between; align-items: center; }
+.tool-nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 8px; transition: color 0.2s; }
+.tool-nav a:hover { color: #fff; }
+.tool-nav-brand { color: rgba(255,255,255,0.3); font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
+
+/* HERO */
+.tool-hero { background: var(--green); padding: 72px 0; text-align: center; }
+.tool-hero h1 { font-family: var(--font-display); font-size: clamp(32px, 4vw, 44px); font-weight: 500; color: #fff; margin-bottom: 12px; }
+.tool-hero p { font-size: 16px; color: rgba(255,255,255,0.65); max-width: 580px; margin: 0 auto; line-height: 1.6; }
+
+/* CURRENT MONTH HIGHLIGHT */
+.current-month-bar {
+  background: var(--warm-black); padding: 20px 0; text-align: center;
+}
+.current-month-bar .container {
+  display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap;
+}
+.current-month-bar .month-label {
+  font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+  letter-spacing: 2px; text-transform: uppercase; color: var(--green-light);
+}
+.current-month-bar .month-name {
+  font-family: var(--font-display); font-size: 20px; color: #fff; font-weight: 500;
+}
+.current-month-bar .task-count {
+  font-size: 13px; color: rgba(255,255,255,0.4);
+}
+
+/* MONTH GRID */
+.month-nav {
+  display: grid; grid-template-columns: repeat(12, 1fr);
+  background: var(--white); border: 1px solid var(--sand); margin-top: 40px;
+}
+.month-nav button {
+  padding: 14px 4px; background: none; border: none; border-right: 1px solid var(--sand);
+  font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: var(--text-light);
+  cursor: pointer; transition: all 0.2s; text-transform: uppercase; letter-spacing: 1px;
+}
+.month-nav button:last-child { border-right: none; }
+.month-nav button:hover { background: var(--cream); color: var(--text); }
+.month-nav button.active { background: var(--green); color: #fff; }
+.month-nav button.has-completed { position: relative; }
+.month-nav button.has-completed::after {
+  content: ''; position: absolute; bottom: 6px; left: 50%; transform: translateX(-50%);
+  width: 4px; height: 4px; border-radius: 50%; background: var(--green-light);
+}
+.month-nav button.active.has-completed::after { background: rgba(255,255,255,0.6); }
+
+/* TASKS */
+.month-panel { padding: 40px 0 120px; }
+.month-title {
+  font-family: var(--font-display); font-size: 28px; font-weight: 500; color: var(--text);
+  margin-bottom: 8px;
+}
+.month-subtitle { font-size: 14px; color: var(--text-light); margin-bottom: 32px; }
+.month-progress {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 32px;
+}
+.month-progress-bar {
+  flex: 1; height: 6px; background: var(--sand); border-radius: 3px; overflow: hidden;
+}
+.month-progress-fill {
+  height: 100%; background: var(--green); border-radius: 3px; transition: width 0.4s ease;
+}
+.month-progress-label {
+  font-family: var(--font-mono); font-size: 12px; font-weight: 600; color: var(--text-light); white-space: nowrap;
+}
+
+.task-category { margin-bottom: 32px; }
+.task-category-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+  margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--sand);
+}
+.task-category-label.hvac { color: var(--blue); }
+.task-category-label.exterior { color: var(--amber); }
+.task-category-label.interior { color: var(--green); }
+.task-category-label.safety { color: var(--red); }
+.task-category-label.seasonal { color: #8B6BB5; }
+
+.task-item {
+  display: flex; align-items: flex-start; gap: 16px; padding: 16px 20px;
+  background: var(--white); border: 1px solid var(--sand); margin-bottom: 8px;
+  cursor: pointer; transition: all 0.2s;
+}
+.task-item:hover { border-color: var(--green); }
+.task-item.done { opacity: 0.55; }
+.task-item.done .task-title { text-decoration: line-through; }
+
+.task-check {
+  width: 22px; height: 22px; border: 2px solid var(--sand); border-radius: 4px;
+  flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s; margin-top: 1px;
+}
+.task-item.done .task-check { background: var(--green); border-color: var(--green); }
+.task-item.done .task-check::after { content: '\2713'; color: #fff; font-size: 13px; font-weight: 700; }
+
+.task-content { flex: 1; }
+.task-title { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+.task-desc { font-size: 13px; color: var(--text-mid); line-height: 1.6; }
+.task-tags { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+.task-tag {
+  font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+  padding: 3px 8px; border-radius: 2px;
+}
+.task-tag.diy { background: var(--green-glow); color: var(--green); }
+.task-tag.pro { background: rgba(196,90,90,0.08); color: var(--red); }
+.task-tag.cost { background: rgba(196,147,90,0.08); color: var(--amber); }
+
+/* CTA */
+.tool-cta { background: var(--warm-black); padding: 64px 0; text-align: center; }
+.tool-cta h2 { font-family: var(--font-display); font-size: 28px; color: #fff; font-weight: 500; margin-bottom: 12px; }
+.tool-cta p { font-size: 15px; color: rgba(255,255,255,0.5); margin-bottom: 28px; max-width: 500px; margin-left: auto; margin-right: auto; }
+.tool-cta a {
+  display: inline-flex; align-items: center; gap: 10px; padding: 16px 32px;
+  background: var(--green); color: #fff; font-size: 13px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase; text-decoration: none; transition: background 0.2s;
+}
+.tool-cta a:hover { background: var(--green-light); }
+
+.tool-footer { text-align: center; padding: 40px 0 100px; font-size: 13px; color: var(--text-light); }
+.tool-footer a { color: var(--green); text-decoration: none; }
+
+/* SHARE */
+.share-bar {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 50;
+  background: var(--warm-black); padding: 14px 24px;
+  display: flex; align-items: center; justify-content: center; gap: 12px;
+}
+.share-bar p { font-size: 13px; color: rgba(255,255,255,0.4); margin-right: 8px; }
+.share-btn {
+  display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px;
+  background: rgba(255,255,255,0.08); border: none; color: rgba(255,255,255,0.7);
+  font-size: 12px; font-weight: 600; cursor: pointer; text-decoration: none;
+  transition: background 0.2s;
+}
+.share-btn:hover { background: rgba(255,255,255,0.15); color: #fff; }
+.share-btn svg { width: 14px; height: 14px; }
+.share-toast {
+  position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%);
+  background: var(--green); color: #fff; padding: 10px 24px;
+  font-size: 13px; font-weight: 600; opacity: 0; transition: opacity 0.3s; pointer-events: none; z-index: 60;
+}
+.share-toast.show { opacity: 1; }
+
+@media (max-width: 768px) {
+  .month-nav { grid-template-columns: repeat(6, 1fr); }
+  .task-item { padding: 14px 16px; }
+  .share-bar { flex-wrap: wrap; gap: 8px; padding: 12px 16px; }
+  .share-bar p { width: 100%; text-align: center; margin-right: 0; }
+}
+</style>
+</head>
+<body>
+
+<nav class="tool-nav">
+  <div class="container">
+    <a href="../index.html">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back to Josh Realty
+    </a>
+    <span class="tool-nav-brand">Josh Realty</span>
+  </div>
+</nav>
+
+<section class="tool-hero">
+  <div class="container">
+    <div style="font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:12px;">Josh Realty Inc. // South Florida Living Hub</div>
+    <h1>Homeowner Maintenance Calendar</h1>
+    <p>Month-by-month tasks built for South Florida's climate. Check them off as you go. Your progress saves automatically in this browser.</p>
+  </div>
+</section>
+
+<!-- ANNUAL DASHBOARD -->
+<div class="current-month-bar">
+  <div class="container">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;width:100%;">
+      <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+        <span class="month-label">This Month</span>
+        <span class="month-name" id="currentMonthName"></span>
+        <span class="task-count" id="currentMonthCount"></span>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;">
+        <span class="task-count" id="annualCount"></span>
+        <button onclick="resetProgress()" style="background:rgba(255,255,255,0.08);border:none;color:rgba(255,255,255,0.35);font-size:11px;font-weight:600;padding:6px 12px;cursor:pointer;letter-spacing:1px;text-transform:uppercase;">Reset Year</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="month-nav" id="monthNav"></div>
+
+  <div class="month-panel" id="monthPanel"></div>
+
+  <!-- CROSS-SELL OTHER TOOLS -->
+  <div style="margin:40px 0;padding:32px;background:#fff;border:1px solid var(--sand);">
+    <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:16px;">More from Josh Realty's Living Hub</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;">
+      <a href="true-cost-calculator.html" style="display:block;padding:16px;background:var(--cream);text-decoration:none;border:1px solid var(--sand);transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--green)'" onmouseout="this.style.borderColor='var(--sand)'">
+        <div style="font-size:14px;font-weight:600;color:var(--text);margin-bottom:4px;">True Cost Calculator</div>
+        <div style="font-size:12px;color:var(--text-mid);">What can you actually afford in South Florida?</div>
+      </a>
+      <a href="first-time-buyer.html" style="display:block;padding:16px;background:var(--cream);text-decoration:none;border:1px solid var(--sand);transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--green)'" onmouseout="this.style.borderColor='var(--sand)'">
+        <div style="font-size:14px;font-weight:600;color:var(--text);margin-bottom:4px;">First-Time Buyer Roadmap</div>
+        <div style="font-size:12px;color:var(--text-mid);">Step-by-step guide for Florida buyers</div>
+      </a>
+      <a href="relocation-guide.html" style="display:block;padding:16px;background:var(--cream);text-decoration:none;border:1px solid var(--sand);transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--green)'" onmouseout="this.style.borderColor='var(--sand)'">
+        <div style="font-size:14px;font-weight:600;color:var(--text);margin-bottom:4px;">Relocation Guide</div>
+        <div style="font-size:12px;color:var(--text-mid);">Neighborhoods, schools, costs, real talk</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<section class="tool-cta">
+  <div class="container">
+    <h2>Need Help With a Bigger Project?</h2>
+    <p>Whether it's a pre-sale renovation, an investment property fix-up, or finding a home that won't need the work - Josh Realty has been helping South Florida homeowners for 25 years.</p>
+    <a href="../index.html#contact">Talk to Our Team <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </div>
+</section>
+
+<div class="tool-footer">
+  <p>A free resource from <a href="../index.html">Josh Realty Inc.</a> | Updated for 2026</p>
+</div>
+
+<div class="share-bar">
+  <p>Useful? Share it with a homeowner</p>
+  <button class="share-btn" onclick="copyLink()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+    Copy Link
+  </button>
+  <a class="share-btn" href="https://twitter.com/intent/tweet?text=This%20free%20Florida%20homeowner%20maintenance%20calendar%20is%20actually%20useful.%20Tracks%20AC%2C%20roof%2C%20hurricane%20prep%2C%20pool%20%E2%80%94%20everything.&url=" target="_blank">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    Post
+  </a>
+  <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+    Share
+  </a>
+  <a class="share-btn" href="sms:?body=Check%20out%20this%20Florida%20home%20maintenance%20calendar%3A%20" target="_blank">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+    Text
+  </a>
+</div>
+<div class="share-toast" id="shareToast">Link copied to clipboard</div>
+
+<script>
+const TASKS = {
+  0: { // January
+    name: "January", subtitle: "New year reset. Test everything.",
+    tasks: [
+      { cat: "safety", title: "Test smoke & CO detectors", desc: "Replace batteries if needed. Florida code requires working detectors on every floor.", tags: ["diy"] },
+      { cat: "interior", title: "Check water heater", desc: "Flush sediment from tank. South Florida's hard water causes faster buildup. Average water heater lasts 8-12 years here.", tags: ["diy"] },
+      { cat: "exterior", title: "Inspect caulking and weatherstripping", desc: "Check around windows, doors, and bathroom fixtures. Florida humidity accelerates caulk breakdown.", tags: ["diy"] },
+      { cat: "interior", title: "Deep clean dryer vent", desc: "Lint buildup is a leading cause of house fires. Clean the full vent line, not just the trap.", tags: ["diy", "cost:$0-150"] },
+      { cat: "exterior", title: "Check irrigation system", desc: "Run each zone manually. Look for broken heads, leaks, or misaligned sprinklers. Winter is prime time since water restrictions are lighter.", tags: ["diy"] },
+      { cat: "hvac", title: "Replace AC filter", desc: "Monthly during heavy use, every 2-3 months in cooler months. A clean filter saves 5-15% on energy costs.", tags: ["diy", "cost:$5-25"] },
+    ]
+  },
+  1: { // February
+    name: "February", subtitle: "Prep for spring. South Florida's dry season is ideal for exterior work.",
+    tasks: [
+      { cat: "exterior", title: "Pressure wash driveway and exterior walls", desc: "Florida humidity causes mold and mildew on concrete and stucco. Best done in dry season before summer rains.", tags: ["diy", "cost:$100-300 pro"] },
+      { cat: "exterior", title: "Inspect roof from ground level", desc: "Look for cracked/missing tiles or shingles, sagging areas, and damaged flashing. Use binoculars. Schedule a pro inspection if anything looks off.", tags: ["diy"] },
+      { cat: "hvac", title: "Schedule spring AC tune-up", desc: "Book now before the rush. A spring tune-up catches issues before your AC works 24/7 in summer. Average cost: $80-150.", tags: ["pro", "cost:$80-150"] },
+      { cat: "interior", title: "Check attic insulation", desc: "Proper insulation cuts AC costs by 20-30%. Look for settling, water damage, or pest intrusion.", tags: ["diy"] },
+      { cat: "exterior", title: "Fertilize lawn (first round)", desc: "February is the start of the growing season in South Florida. Use a slow-release fertilizer. Check county rules - some restrict fertilizer near waterways.", tags: ["diy", "cost:$20-50"] },
+      { cat: "interior", title: "Test garage door auto-reverse", desc: "Place an object in the door's path. It should reverse immediately on contact. Test monthly for safety.", tags: ["diy"] },
+    ]
+  },
+  2: { // March
+    name: "March", subtitle: "AC season is around the corner. Get ahead of it.",
+    tasks: [
+      { cat: "hvac", title: "Complete spring AC service", desc: "Technician should check refrigerant levels, clean coils, inspect ductwork, and test thermostat. This is the most important maintenance appointment of the year.", tags: ["pro", "cost:$80-150"] },
+      { cat: "exterior", title: "Trim trees and hedges", desc: "Cut back branches within 6 feet of your roof. This matters for hurricane season AND your insurance rates. Some insurers require it.", tags: ["diy", "cost:$200-800 pro"] },
+      { cat: "interior", title: "Check all plumbing for leaks", desc: "Inspect under sinks, around toilets, near water heater, and behind washing machine. A small leak in Florida's humidity becomes mold in days.", tags: ["diy"] },
+      { cat: "exterior", title: "Clean gutters and downspouts", desc: "Clear debris before rainy season. Ensure downspouts direct water at least 3 feet from foundation.", tags: ["diy", "cost:$75-200 pro"] },
+      { cat: "interior", title: "Clean bathroom exhaust fans", desc: "Remove cover, vacuum dust, wipe blades. These fans are critical for humidity control in Florida bathrooms.", tags: ["diy"] },
+      { cat: "safety", title: "Check fire extinguisher", desc: "Ensure it's charged and accessible. Replace if older than 12 years. Keep one in the kitchen and garage.", tags: ["diy"] },
+    ]
+  },
+  3: { // April
+    name: "April", subtitle: "Hurricane prep starts now. Not in June.",
+    tasks: [
+      { cat: "seasonal", title: "Test hurricane shutters or impact windows", desc: "Make sure all shutters deploy properly and hardware isn't rusted. If you have impact windows, inspect seals and frames.", tags: ["diy"] },
+      { cat: "seasonal", title: "Review homeowners, wind, and flood insurance", desc: "Policies renew at different times. Confirm coverage amounts, deductibles, and understand what each policy covers. Shop for better rates.", tags: ["diy"] },
+      { cat: "exterior", title: "Full roof inspection (professional)", desc: "Schedule a licensed roofer to inspect before hurricane season. Get a wind mitigation report - it can save 15-45% on wind insurance.", tags: ["pro", "cost:$150-400"] },
+      { cat: "exterior", title: "Seal driveway and patio cracks", desc: "Florida's wet/dry cycles expand cracks. Seal them before summer rains make them worse.", tags: ["diy", "cost:$10-50"] },
+      { cat: "safety", title: "Inventory emergency supplies", desc: "Water (1 gallon per person per day, 7-day supply), batteries, flashlights, first aid kit, medications, important documents in waterproof container.", tags: ["diy", "cost:$100-300"] },
+      { cat: "hvac", title: "Replace AC filter", desc: "Monthly changes start now. Your AC is about to work harder than any other appliance in your home for the next 6 months.", tags: ["diy", "cost:$5-25"] },
+    ]
+  },
+  4: { // May
+    name: "May", subtitle: "Last chance before hurricane season. Final prep month.",
+    tasks: [
+      { cat: "seasonal", title: "Create/update hurricane plan", desc: "Know your evacuation zone (miamidade.gov/evacuations). Plan where you'd go, what you'd take, and how you'd secure the house.", tags: ["diy"] },
+      { cat: "seasonal", title: "Test generator", desc: "Run it for 30 minutes under load. Check oil, fuel lines, and transfer switch. If you don't have one, consider it - power outages after storms can last days.", tags: ["diy"] },
+      { cat: "exterior", title: "Check and clean pool equipment", desc: "Inspect pump, filter, and chlorinator. Summer heat + rain means algae grows fast. Pool equipment works hardest May-October.", tags: ["diy", "cost:$100-200 pro"] },
+      { cat: "exterior", title: "Apply pest treatment (exterior)", desc: "Treat foundation perimeter. Florida's rainy season pushes bugs indoors. Fire ants, palmetto bugs, and termites are the big three.", tags: ["pro", "cost:$100-200"] },
+      { cat: "interior", title: "Check ceiling fans direction", desc: "Set to counterclockwise for summer (pushes cool air down). This simple switch reduces AC load.", tags: ["diy"] },
+      { cat: "exterior", title: "Fertilize lawn (second round)", desc: "Last fertilizer application before many South Florida counties restrict use June-September to protect waterways.", tags: ["diy", "cost:$20-50"] },
+    ]
+  },
+  5: { // June
+    name: "June", subtitle: "Hurricane season is active. Rainy season begins.",
+    tasks: [
+      { cat: "hvac", title: "Replace AC filter", desc: "Your AC is now running essentially 24/7. Monthly filter changes are non-negotiable May through October.", tags: ["diy", "cost:$5-25"] },
+      { cat: "interior", title: "Check for water intrusion after rains", desc: "Inspect windows, doors, ceilings, and garage after heavy downpours. Florida gets 60+ inches of rain per year, most of it June-September.", tags: ["diy"] },
+      { cat: "exterior", title: "Monitor yard drainage", desc: "Watch where water pools during storms. Poor drainage near the foundation leads to cracking, settling, and mold.", tags: ["diy"] },
+      { cat: "interior", title: "Clean AC drain line", desc: "Pour 1 cup white vinegar down the condensate drain monthly. Clogged drain lines are the #1 cause of AC water damage in Florida homes.", tags: ["diy"] },
+      { cat: "safety", title: "Review hurricane supply kit", desc: "Check expiration dates on water, food, medications, and batteries. Replace anything expired.", tags: ["diy"] },
+    ]
+  },
+  6: { // July
+    name: "July", subtitle: "Peak heat. Peak rain. Keep things running.",
+    tasks: [
+      { cat: "hvac", title: "Replace AC filter", desc: "Monthly. This is the hardest month for your AC. If it's struggling to keep up, the filter is the first thing to check.", tags: ["diy", "cost:$5-25"] },
+      { cat: "interior", title: "Check humidity levels", desc: "Keep indoor humidity below 60%. If your AC can't keep up, add a dehumidifier. Mold starts growing within 24-48 hours above 60% humidity.", tags: ["diy"] },
+      { cat: "exterior", title: "Inspect pool fence and safety features", desc: "Florida law requires pool barriers. Check gate latches, fence integrity, and alarm systems. This is both safety and legal compliance.", tags: ["diy"] },
+      { cat: "interior", title: "Deep clean refrigerator coils", desc: "Dirty coils make the fridge work harder in summer heat. Pull it out, vacuum the coils. Saves energy and extends the fridge's life.", tags: ["diy"] },
+      { cat: "exterior", title: "Check exterior paint and stucco", desc: "Summer rain exposes weak spots. Look for peeling, bubbling, or cracks in stucco that could allow water intrusion.", tags: ["diy"] },
+    ]
+  },
+  7: { // August
+    name: "August", subtitle: "Peak hurricane threat. Stay vigilant.",
+    tasks: [
+      { cat: "hvac", title: "Replace AC filter", desc: "Monthly. If you notice higher-than-usual electric bills, have a tech check the system before it fails in the worst heat.", tags: ["diy", "cost:$5-25"] },
+      { cat: "seasonal", title: "Re-check hurricane supplies", desc: "August-October is statistically when the strongest storms form. Make sure everything is ready and accessible.", tags: ["diy"] },
+      { cat: "exterior", title: "Trim any new tree growth near roof", desc: "Summer growth can quickly put branches back in contact with your roof. Keep 6 feet of clearance.", tags: ["diy"] },
+      { cat: "interior", title: "Check washing machine hoses", desc: "Replace rubber hoses with braided stainless steel. Washing machine hose failures are a top cause of water damage in Florida homes.", tags: ["diy", "cost:$15-30"] },
+      { cat: "safety", title: "Test smoke and CO detectors", desc: "Biannual test. Press the button, confirm the alarm sounds. Replace any detector over 10 years old.", tags: ["diy"] },
+    ]
+  },
+  8: { // September
+    name: "September", subtitle: "Hurricane season continues. Start thinking about fall maintenance.",
+    tasks: [
+      { cat: "hvac", title: "Replace AC filter", desc: "Monthly. September heat can be as bad as July. Keep that filter fresh.", tags: ["diy", "cost:$5-25"] },
+      { cat: "exterior", title: "Check for termite activity", desc: "Look for mud tubes on foundation, hollow-sounding wood, or discarded wings near windows. Florida is the #1 state for termite damage. Annual inspections are worth it.", tags: ["diy", "cost:$75-150 pro inspection"] },
+      { cat: "interior", title: "Check all door and window locks", desc: "Test every lock in the house. Lubricate sticky locks with graphite powder (not WD-40, which attracts dirt).", tags: ["diy"] },
+      { cat: "exterior", title: "Inspect fence and gates", desc: "Florida rain and wind loosen posts and hardware. Tighten or replace before winter social season.", tags: ["diy"] },
+      { cat: "hvac", title: "Schedule fall AC maintenance", desc: "Book for October/November. Two tune-ups per year keeps your system running 15+ years instead of 10.", tags: ["pro", "cost:$80-150"] },
+    ]
+  },
+  9: { // October
+    name: "October", subtitle: "Hurricane season winds down. Snowbird season begins.",
+    tasks: [
+      { cat: "hvac", title: "Complete fall AC service", desc: "Second annual tune-up. Technician should check the heat pump or auxiliary heat (yes, even in Florida, some nights get chilly).", tags: ["pro", "cost:$80-150"] },
+      { cat: "exterior", title: "Fertilize lawn (fall round)", desc: "County restrictions typically lift in October. Apply a fall fertilizer to keep your lawn healthy through winter.", tags: ["diy", "cost:$20-50"] },
+      { cat: "exterior", title: "Check exterior lighting", desc: "Days are getting shorter. Replace burned-out bulbs, clean fixtures, and ensure motion sensors work. Good lighting improves security and curb appeal.", tags: ["diy"] },
+      { cat: "interior", title: "Service kitchen and bath drains", desc: "Pour enzyme cleaner (not chemical) down all drains. Prevents buildup and keeps things flowing.", tags: ["diy", "cost:$10-20"] },
+      { cat: "safety", title: "Review home security system", desc: "Test all sensors, cameras, and entry points. Snowbird season means more vacant homes in the neighborhood.", tags: ["diy"] },
+    ]
+  },
+  10: { // November
+    name: "November", subtitle: "Hurricane season ends Nov 30. Post-season assessment.",
+    tasks: [
+      { cat: "seasonal", title: "Post-hurricane season property check", desc: "Walk the entire exterior. Look for damage you might have missed during the season. Document everything with photos.", tags: ["diy"] },
+      { cat: "exterior", title: "Clean and store hurricane shutters", desc: "Lubricate tracks and hardware. Store panels in a dry location. Label them by window for next year.", tags: ["diy"] },
+      { cat: "interior", title: "Flush water heater (second annual)", desc: "Drain several gallons to remove sediment. South Florida's hard water demands this twice a year.", tags: ["diy"] },
+      { cat: "exterior", title: "Pressure wash pool deck", desc: "Algae buildup from summer rains. Clean before holiday season entertaining.", tags: ["diy", "cost:$75-200 pro"] },
+      { cat: "interior", title: "Check ceiling fans - reverse direction", desc: "Set to clockwise for winter (pulls cool air up, pushes warm air down from ceiling).", tags: ["diy"] },
+    ]
+  },
+  11: { // December
+    name: "December", subtitle: "Year-end wrap. Set yourself up for a smooth January.",
+    tasks: [
+      { cat: "exterior", title: "Full roof inspection (visual)", desc: "Post-hurricane season check. Look from the ground with binoculars. After any storms, check for missing tiles/shingles, damaged flashing.", tags: ["diy"] },
+      { cat: "safety", title: "Holiday electrical safety check", desc: "Don't overload circuits with holiday lights. Check extension cords for fraying. Use outdoor-rated cords outside.", tags: ["diy"] },
+      { cat: "interior", title: "Check attic for pests", desc: "Cooler weather drives rodents and raccoons into attics. Look for droppings, chewed wires, or nesting materials.", tags: ["diy"] },
+      { cat: "interior", title: "Deep clean kitchen exhaust hood and filter", desc: "Grease buildup is a fire hazard. Soak filters in hot soapy water or run through dishwasher.", tags: ["diy"] },
+      { cat: "exterior", title: "Year-end exterior inspection", desc: "Walk the property. Note everything that needs attention in the new year. Take photos for your records. Review what you spent on maintenance - budget accordingly for next year.", tags: ["diy"] },
+      { cat: "hvac", title: "Replace AC filter", desc: "End the year with a fresh filter. Even though AC runs less in 'winter,' Florida humidity means it still cycles regularly.", tags: ["diy", "cost:$5-25"] },
+    ]
+  }
+};
+
+const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const MONTH_FULL = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+let currentView = new Date().getMonth();
+let completed = JSON.parse(localStorage.getItem('maintenance-cal') || '{}');
+
+function init() {
+  const now = new Date().getMonth();
+  document.getElementById('currentMonthName').textContent = MONTH_FULL[now];
+  renderNav();
+  renderMonth(now);
+  updateTopBar();
+}
+
+function renderNav() {
+  const nav = document.getElementById('monthNav');
+  nav.innerHTML = '';
+  MONTHS.forEach((m, i) => {
+    const btn = document.createElement('button');
+    btn.textContent = m;
+    if (i === currentView) btn.classList.add('active');
+    const key = String(i);
+    if (completed[key] && completed[key].length > 0) btn.classList.add('has-completed');
+    btn.onclick = () => { currentView = i; renderNav(); renderMonth(i); };
+    nav.appendChild(btn);
+  });
+}
+
+function renderMonth(idx) {
+  const panel = document.getElementById('monthPanel');
+  const data = TASKS[idx];
+  const done = completed[String(idx)] || [];
+  const total = data.tasks.length;
+  const doneCount = done.length;
+  const pct = total > 0 ? Math.round((doneCount/total)*100) : 0;
+
+  // Group by category
+  const groups = {};
+  data.tasks.forEach((t, i) => {
+    if (!groups[t.cat]) groups[t.cat] = [];
+    groups[t.cat].push({...t, idx: i});
+  });
+
+  const catLabels = { hvac: 'HVAC & Climate', exterior: 'Exterior & Landscape', interior: 'Interior', safety: 'Safety & Security', seasonal: 'Seasonal / Hurricane' };
+  const catOrder = ['seasonal','hvac','exterior','interior','safety'];
+
+  let html = `
+    <h2 class="month-title">${data.name}</h2>
+    <p class="month-subtitle">${data.subtitle}</p>
+    <div class="month-progress">
+      <div class="month-progress-bar"><div class="month-progress-fill" style="width:${pct}%"></div></div>
+      <span class="month-progress-label">${doneCount}/${total} done</span>
+    </div>
+  `;
+
+  catOrder.forEach(cat => {
+    if (!groups[cat]) return;
+    html += `<div class="task-category"><div class="task-category-label ${cat}">${catLabels[cat]}</div>`;
+    groups[cat].forEach(t => {
+      const isDone = done.includes(t.idx);
+      const tags = (t.tags||[]).map(tag => {
+        if (tag === 'diy') return '<span class="task-tag diy">DIY</span>';
+        if (tag === 'pro') return '<span class="task-tag pro">Hire Pro</span>';
+        if (tag.startsWith('cost:')) return `<span class="task-tag cost">${tag.replace('cost:','')}</span>`;
+        return '';
+      }).join('');
+      html += `
+        <div class="task-item ${isDone?'done':''}" onclick="toggleTask(${idx},${t.idx})">
+          <div class="task-check"></div>
+          <div class="task-content">
+            <div class="task-title">${t.title}</div>
+            <div class="task-desc">${t.desc}</div>
+            ${tags ? '<div class="task-tags">'+tags+'</div>' : ''}
+          </div>
+        </div>`;
+    });
+    html += '</div>';
+  });
+
+  panel.innerHTML = html;
+
+  // Add Josh Realty branded tip at bottom of month
+  const tips = {
+    0: "January is a great time to review your homestead exemption. Filed yours yet?",
+    1: "Thinking of selling this spring? A well-maintained home appraises higher. We can do a free CMA.",
+    2: "Spring market is heating up. If you're curious what your home is worth, we run free market analyses.",
+    3: "Hurricane prep time. Our Hurricane Readiness Kit launches in May with insurance tips and checklists.",
+    4: "Inventory is tightest in May. If you've been thinking about selling, this is historically the best month.",
+    5: "New to South Florida? Check our Relocation Guide for neighborhood breakdowns and school ratings.",
+    6: "Keeping up with maintenance protects your investment. South Florida homes that are well-maintained sell for 5-10% more.",
+    7: "Wondering what your home is worth in this market? We offer free, no-obligation home valuations.",
+    8: "Fall market pickup starts soon. Buyers who missed summer are motivated. Good time to list.",
+    9: "Snowbird season begins. If you have an investment property, now's the time to get it tenant-ready.",
+    10: "Year-end is a smart time to reassess your real estate portfolio. Need a second opinion? Let's talk.",
+    11: "Planning a move in the new year? Start your search early. We can set up auto-alerts for new listings."
+  };
+  const tipEl = document.createElement('div');
+  tipEl.style.cssText = 'margin-top:32px;padding:20px 24px;background:var(--green-glow);border-left:3px solid var(--green);';
+  tipEl.innerHTML = `<div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:6px;">From Josh Realty</div><p style="font-size:13px;color:var(--text-mid);line-height:1.6;margin:0;">${tips[idx]} <a href="../index.html#contact" style="color:var(--green);font-weight:600;text-decoration:none;">Get in touch &rarr;</a></p>`;
+  panel.appendChild(tipEl);
+}
+
+function toggleTask(month, taskIdx) {
+  const key = String(month);
+  if (!completed[key]) completed[key] = [];
+  const arr = completed[key];
+  const i = arr.indexOf(taskIdx);
+  if (i > -1) arr.splice(i, 1);
+  else arr.push(taskIdx);
+  localStorage.setItem('maintenance-cal', JSON.stringify(completed));
+  renderNav();
+  renderMonth(month);
+  updateTopBar();
+  // Show save indicator
+  const t = document.getElementById('shareToast');
+  t.textContent = '\u2713 Progress saved';
+  t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 1200);
+}
+
+function updateTopBar() {
+  const now = new Date().getMonth();
+  const data = TASKS[now];
+  const done = (completed[String(now)] || []).length;
+  const total = data.tasks.length;
+  document.getElementById('currentMonthCount').textContent = `${done} of ${total} tasks complete`;
+  // Annual count
+  let annualDone = 0, annualTotal = 0;
+  for (let m = 0; m < 12; m++) {
+    annualTotal += TASKS[m].tasks.length;
+    annualDone += (completed[String(m)] || []).length;
+  }
+  document.getElementById('annualCount').textContent = `${annualDone}/${annualTotal} annual`;
+}
+
+function resetProgress() {
+  if (confirm('Reset all progress for the year? This cannot be undone.')) {
+    completed = {};
+    localStorage.removeItem('maintenance-cal');
+    renderNav();
+    renderMonth(currentView);
+    updateTopBar();
+  }
+}
+
+function copyLink() {
+  navigator.clipboard.writeText(window.location.href).then(() => {
+    const t = document.getElementById('shareToast');
+    t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 2000);
+  });
+}
+
+init();
+</script>
+</body>
+</html>

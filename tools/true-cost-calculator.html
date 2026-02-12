@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>True Cost Calculator | Josh Realty Inc.</title>
+<meta name="description" content="What can you actually afford in South Florida? Factor in property taxes, insurance, HOA, flood zones, and maintenance. Free from Josh Realty.">
+<meta property="og:title" content="What Can You ACTUALLY Afford in South Florida?">
+<meta property="og:description" content="Mortgage is only half the story. Calculate the true monthly cost of owning a home in South Florida.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --charcoal: #2C2825;
+  --warm-black: #1A1816;
+  --teal: #2A8B7A;
+  --teal-dark: #1F6B5E;
+  --teal-glow: rgba(42,139,122,0.1);
+  --red: #D94F3D;
+  --amber: #E8913A;
+  --cream: #FAF7F2;
+  --sand: #E8E0D0;
+  --text: #3A352F;
+  --text-mid: #6B675F;
+  --text-light: #9A9488;
+  --white: #FFFFFF;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); color: var(--text); background: var(--cream); }
+
+/* SHARE BAR */
+.share-bar {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: var(--warm-black); padding: 14px 24px;
+  display: flex; align-items: center; justify-content: center; gap: 12px;
+  z-index: 100; border-top: 1px solid rgba(255,255,255,0.08);
+}
+.share-bar p { color: rgba(255,255,255,0.5); font-size: 13px; font-weight: 500; margin-right: 8px; }
+.share-btn {
+  display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px;
+  border: 1px solid rgba(255,255,255,0.15); background: none;
+  color: rgba(255,255,255,0.7); font-family: var(--font-body);
+  font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+  cursor: pointer; transition: all 0.2s; text-decoration: none;
+}
+.share-btn:hover { background: rgba(255,255,255,0.08); color: #fff; }
+.share-btn.copy-link { border-color: var(--teal); color: var(--teal); }
+.share-btn.copy-link:hover { background: var(--teal); color: var(--warm-black); }
+.share-btn svg { width: 14px; height: 14px; }
+.share-toast {
+  position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%) translateY(20px);
+  background: var(--teal); color: #fff; padding: 10px 24px; font-size: 13px; font-weight: 600;
+  border-radius: 6px; opacity: 0; pointer-events: none; transition: all 0.3s; z-index: 101;
+}
+.share-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* NAV */
+.tool-nav {
+  padding: 20px 0; background: var(--white); border-bottom: 1px solid var(--sand);
+  position: sticky; top: 0; z-index: 50;
+}
+.tool-nav .container { display: flex; align-items: center; justify-content: space-between; max-width: 1080px; }
+.tool-nav a {
+  font-size: 13px; font-weight: 500; color: var(--text-mid); text-decoration: none;
+  display: flex; align-items: center; gap: 8px; transition: color 0.2s;
+}
+.tool-nav a:hover { color: var(--text); }
+.tool-nav-brand { font-family: var(--font-display); font-size: 16px; font-weight: 600; color: var(--text); }
+
+.container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+/* HERO */
+.tool-hero { padding: 80px 0 48px; text-align: center; }
+.tool-hero h1 {
+  font-family: var(--font-display); font-size: clamp(32px, 5vw, 48px);
+  font-weight: 600; color: var(--text); margin-bottom: 16px; line-height: 1.15;
+}
+.tool-hero p { font-size: 18px; line-height: 1.7; color: var(--text-mid); max-width: 640px; margin: 0 auto; }
+
+/* CALCULATOR LAYOUT */
+.calc-layout { display: grid; grid-template-columns: 1fr 400px; gap: 48px; align-items: start; padding-bottom: 120px; }
+
+/* INPUT PANEL */
+.calc-inputs { background: var(--white); border: 1px solid var(--sand); padding: 40px; }
+.calc-inputs h2 {
+  font-family: var(--font-display); font-size: 22px; font-weight: 600;
+  color: var(--text); margin-bottom: 28px;
+}
+.input-group { margin-bottom: 24px; }
+.input-group label {
+  display: block; font-size: 13px; font-weight: 600; color: var(--text);
+  margin-bottom: 8px; letter-spacing: 0.5px;
+}
+.input-group .hint { font-size: 12px; color: var(--text-light); margin-bottom: 8px; }
+.input-group input, .input-group select {
+  width: 100%; font-family: var(--font-mono); font-size: 16px; padding: 14px 16px;
+  border: 2px solid var(--sand); background: var(--cream); color: var(--text);
+  transition: border-color 0.2s; -webkit-appearance: none; border-radius: 0;
+}
+.input-group input:focus, .input-group select:focus { outline: none; border-color: var(--teal); }
+.input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.input-group select { cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B675F' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
+.divider { height: 1px; background: var(--sand); margin: 32px 0; }
+.section-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 20px; display: block;
+}
+
+/* RESULTS PANEL */
+.calc-results { position: sticky; top: 80px; }
+.results-card {
+  background: var(--warm-black); padding: 40px; position: relative; overflow: hidden;
+}
+.results-card::before {
+  content: ''; position: absolute; top: -30%; right: -20%; width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(42,139,122,0.1) 0%, transparent 70%); pointer-events: none;
+}
+.results-card h2 {
+  font-family: var(--font-display); font-size: 18px; color: rgba(255,255,255,0.5);
+  font-weight: 400; margin-bottom: 8px;
+}
+.results-total {
+  font-family: var(--font-mono); font-size: 52px; font-weight: 600; color: var(--teal);
+  margin-bottom: 4px; line-height: 1;
+}
+.results-total-label { font-size: 13px; color: rgba(255,255,255,0.35); margin-bottom: 32px; }
+.results-breakdown { list-style: none; }
+.results-breakdown li {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+  font-size: 14px;
+}
+.results-breakdown li:last-child { border-bottom: none; }
+.results-breakdown .label { color: rgba(255,255,255,0.5); display: flex; align-items: center; gap: 8px; }
+.results-breakdown .value { font-family: var(--font-mono); color: #fff; font-weight: 500; }
+.results-breakdown .bar-wrap {
+  flex: 1; height: 4px; background: rgba(255,255,255,0.06);
+  border-radius: 2px; margin: 0 16px; overflow: hidden;
+}
+.results-breakdown .bar { height: 100%; background: var(--teal); border-radius: 2px; transition: width 0.4s; }
+
+.results-divider { height: 1px; background: rgba(255,255,255,0.1); margin: 20px 0; }
+
+.results-annual {
+  display: flex; justify-content: space-between; padding: 12px 0;
+}
+.results-annual .label { font-size: 13px; color: rgba(255,255,255,0.4); }
+.results-annual .value { font-family: var(--font-mono); font-size: 16px; color: var(--amber); font-weight: 600; }
+
+.income-needed {
+  background: rgba(217,79,61,0.1); border: 1px solid rgba(217,79,61,0.2);
+  padding: 20px; margin-top: 20px;
+}
+.income-needed p { font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 4px; }
+.income-needed .value { font-family: var(--font-mono); font-size: 24px; color: var(--red); font-weight: 600; }
+.income-needed .note { font-size: 11px; color: rgba(255,255,255,0.3); margin-top: 4px; }
+
+/* CONTEXT */
+.context-section {
+  background: var(--white); border: 1px solid var(--sand); padding: 28px; margin-top: 20px;
+}
+.context-section h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 12px; }
+.context-item { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--sand); font-size: 13px; }
+.context-item:last-child { border-bottom: none; }
+.context-item .label { color: var(--text-mid); }
+.context-item .value { font-family: var(--font-mono); font-weight: 600; color: var(--text); }
+
+@media (max-width: 900px) {
+  .calc-layout { grid-template-columns: 1fr; }
+  .calc-results { position: static; }
+  .results-total { font-size: 40px; }
+  .share-bar { flex-wrap: wrap; gap: 8px; padding: 12px 16px; }
+  .share-bar p { width: 100%; text-align: center; margin-right: 0; }
+}
+</style>
+</head>
+<body>
+
+<nav class="tool-nav">
+  <div class="container">
+    <a href="../index.html">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back to Josh Realty
+    </a>
+    <span class="tool-nav-brand">Josh Realty</span>
+  </div>
+</nav>
+
+<section class="tool-hero">
+  <div class="container">
+    <h1>What Can You <em>Actually</em> Afford?</h1>
+    <p>The mortgage is only half the story. In South Florida, insurance, taxes, HOA, and maintenance can add $1,500+ to your monthly cost. See the real number.</p>
+  </div>
+</section>
+
+<div class="container">
+  <div class="calc-layout">
+    <!-- INPUTS -->
+    <div class="calc-inputs">
+      <h2>Your Numbers</h2>
+      
+      <span class="section-label">Property</span>
+      <div class="input-group">
+        <label>Home Price</label>
+        <input type="text" id="price" value="450,000" oninput="calculate()">
+      </div>
+      <div class="input-row">
+        <div class="input-group">
+          <label>Down Payment (%)</label>
+          <input type="number" id="downPct" value="20" min="0" max="100" oninput="calculate()">
+        </div>
+        <div class="input-group">
+          <label>Interest Rate (%)</label>
+          <input type="number" id="rate" value="6.5" step="0.125" oninput="calculate()">
+        </div>
+      </div>
+      <div class="input-group">
+        <label>Loan Term</label>
+        <select id="term" onchange="calculate()">
+          <option value="30" selected>30-Year Fixed</option>
+          <option value="15">15-Year Fixed</option>
+        </select>
+      </div>
+
+      <div class="divider"></div>
+      <span class="section-label">Florida Costs</span>
+      
+      <div class="input-row">
+        <div class="input-group">
+          <label>Property Tax Rate (%)</label>
+          <div class="hint">Miami-Dade avg: ~1.02%</div>
+          <input type="number" id="taxRate" value="1.02" step="0.01" oninput="calculate()">
+        </div>
+        <div class="input-group">
+          <label>Homeowners Insurance ($/yr)</label>
+          <div class="hint">FL avg: $4,200/yr</div>
+          <input type="text" id="insurance" value="4,200" oninput="calculate()">
+        </div>
+      </div>
+      <div class="input-row">
+        <div class="input-group">
+          <label>Flood Insurance ($/yr)</label>
+          <div class="hint">$0 if not in flood zone</div>
+          <input type="text" id="flood" value="1,200" oninput="calculate()">
+        </div>
+        <div class="input-group">
+          <label>Wind Insurance ($/yr)</label>
+          <div class="hint">Often separate in FL</div>
+          <input type="text" id="wind" value="2,400" oninput="calculate()">
+        </div>
+      </div>
+      <div class="input-row">
+        <div class="input-group">
+          <label>HOA ($/month)</label>
+          <div class="hint">$0 for single-family, no HOA</div>
+          <input type="text" id="hoa" value="350" oninput="calculate()">
+        </div>
+        <div class="input-group">
+          <label>Maintenance ($/month)</label>
+          <div class="hint">Rule of thumb: 1% of home/yr</div>
+          <input type="text" id="maint" value="375" oninput="calculate()">
+        </div>
+      </div>
+    </div>
+
+    <!-- RESULTS -->
+    <div class="calc-results">
+      <div class="results-card">
+        <h2>Your True Monthly Cost</h2>
+        <div class="results-total" id="totalMonthly">$0</div>
+        <div class="results-total-label">per month, all in</div>
+        
+        <ul class="results-breakdown">
+          <li>
+            <span class="label">Mortgage (P&I)</span>
+            <div class="bar-wrap"><div class="bar" id="barMortgage" style="width:0%"></div></div>
+            <span class="value" id="valMortgage">$0</span>
+          </li>
+          <li>
+            <span class="label">Property Tax</span>
+            <div class="bar-wrap"><div class="bar" id="barTax" style="width:0%"></div></div>
+            <span class="value" id="valTax">$0</span>
+          </li>
+          <li>
+            <span class="label">All Insurance</span>
+            <div class="bar-wrap"><div class="bar" id="barIns" style="width:0%"></div></div>
+            <span class="value" id="valIns">$0</span>
+          </li>
+          <li>
+            <span class="label">HOA</span>
+            <div class="bar-wrap"><div class="bar" id="barHoa" style="width:0%"></div></div>
+            <span class="value" id="valHoa">$0</span>
+          </li>
+          <li>
+            <span class="label">Maintenance</span>
+            <div class="bar-wrap"><div class="bar" id="barMaint" style="width:0%"></div></div>
+            <span class="value" id="valMaint">$0</span>
+          </li>
+        </ul>
+        
+        <div class="results-divider"></div>
+        <div class="results-annual">
+          <span class="label">Total Annual Cost</span>
+          <span class="value" id="totalAnnual">$0</span>
+        </div>
+        
+        <div class="income-needed">
+          <p>Household income needed (28% rule)</p>
+          <div class="value" id="incomeNeeded">$0</div>
+          <div class="note">Lenders typically want housing costs under 28% of gross income</div>
+        </div>
+      </div>
+
+      <div class="context-section">
+        <h3>South Florida Context</h3>
+        <div class="context-item">
+          <span class="label">Median Home (Miami-Dade)</span>
+          <span class="value">$415K</span>
+        </div>
+        <div class="context-item">
+          <span class="label">Median Household Income</span>
+          <span class="value">$65K</span>
+        </div>
+        <div class="context-item">
+          <span class="label">Income Needed for Median</span>
+          <span class="value">$168K</span>
+        </div>
+        <div class="context-item">
+          <span class="label">FL Property Tax (avg)</span>
+          <span class="value">0.86%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SHARE BAR -->
+<div class="share-bar">
+  <p>Help someone understand the real cost</p>
+  <button class="share-btn copy-link" onclick="copyLink()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+    Copy Link
+  </button>
+  <a class="share-btn" href="https://twitter.com/intent/tweet?text=Mortgage%20is%20only%20half%20the%20story%20in%20South%20Florida.%20This%20calculator%20shows%20the%20REAL%20monthly%20cost%20%F0%9F%A0&url=" target="_blank">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    Post
+  </a>
+  <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+    Share
+  </a>
+  <a class="share-btn" href="sms:?body=Check%20out%20this%20South%20Florida%20true%20cost%20calculator%20before%20you%20buy%3A%20" target="_blank">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+    Text
+  </a>
+</div>
+<div class="share-toast" id="shareToast">Link copied to clipboard</div>
+
+<script>
+function num(id) { return parseFloat(document.getElementById(id).value.replace(/[^0-9.]/g, '')) || 0; }
+function fmt(n) { return '$' + Math.round(n).toLocaleString(); }
+
+function calculate() {
+  const price = num('price');
+  const downPct = num('downPct') / 100;
+  const rate = num('rate') / 100 / 12;
+  const term = parseInt(document.getElementById('term').value) * 12;
+  const loan = price * (1 - downPct);
+  
+  // Mortgage P&I
+  let mortgage = 0;
+  if (rate > 0 && loan > 0) {
+    mortgage = loan * (rate * Math.pow(1 + rate, term)) / (Math.pow(1 + rate, term) - 1);
+  }
+  
+  // Monthly costs
+  const tax = (price * (num('taxRate') / 100)) / 12;
+  const ins = (num('insurance') + num('flood') + num('wind')) / 12;
+  const hoa = num('hoa');
+  const maint = num('maint');
+  const total = mortgage + tax + ins + hoa + maint;
+  
+  // Update display
+  document.getElementById('totalMonthly').textContent = fmt(total);
+  document.getElementById('totalAnnual').textContent = fmt(total * 12);
+  document.getElementById('incomeNeeded').textContent = fmt((total / 0.28) * 12);
+  
+  document.getElementById('valMortgage').textContent = fmt(mortgage);
+  document.getElementById('valTax').textContent = fmt(tax);
+  document.getElementById('valIns').textContent = fmt(ins);
+  document.getElementById('valHoa').textContent = fmt(hoa);
+  document.getElementById('valMaint').textContent = fmt(maint);
+  
+  // Bars
+  const max = Math.max(mortgage, tax, ins, hoa, maint, 1);
+  document.getElementById('barMortgage').style.width = (mortgage/max*100) + '%';
+  document.getElementById('barTax').style.width = (tax/max*100) + '%';
+  document.getElementById('barIns').style.width = (ins/max*100) + '%';
+  document.getElementById('barHoa').style.width = (hoa/max*100) + '%';
+  document.getElementById('barMaint').style.width = (maint/max*100) + '%';
+}
+
+function copyLink() {
+  navigator.clipboard.writeText(window.location.href).then(() => {
+    const toast = document.getElementById('shareToast');
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2000);
+  });
+}
+
+calculate();
+</script>
+</body>
+</html>
