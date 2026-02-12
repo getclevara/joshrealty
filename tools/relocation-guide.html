@@ -517,8 +517,19 @@ function showTab(id) {
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.section-tab').forEach(t => t.classList.remove('active'));
   document.getElementById('panel-' + id).classList.add('active');
-  event.target.classList.add('active');
+  // Find and activate the matching tab button
+  document.querySelectorAll('.section-tab').forEach(t => {
+    if (t.getAttribute('onclick').includes("'" + id + "'")) t.classList.add('active');
+  });
 }
+
+// Handle hash on page load
+(function() {
+  const hash = window.location.hash.replace('#panel-', '');
+  if (hash && document.getElementById('panel-' + hash)) {
+    showTab(hash);
+  }
+})();
 
 function copyLink() {
   navigator.clipboard.writeText(window.location.href).then(() => {
