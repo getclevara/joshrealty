@@ -1091,10 +1091,16 @@ footer {
   .mobile-toggle { display: flex; }
 
   /* MOBILE HERO FIX */
-  .hero { min-height: auto; }
+  .hero {
+    min-height: auto;
+    flex-direction: column;
+    align-items: stretch;
+    overflow: visible;
+  }
   .hero .container {
     padding-top: 100px;
     padding-bottom: 40px;
+    align-items: center;
   }
   .hero h1 { font-size: 32px; margin-bottom: 16px; }
   .hero-since { font-size: 10px; margin-bottom: 14px; }
@@ -1105,8 +1111,10 @@ footer {
   .hero-bottom-bar {
     position: relative;
     bottom: auto; left: auto; right: auto;
+    width: 100%;
     background: rgba(28,43,58,0.95);
-    border-top: none;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    z-index: 3;
   }
   .hero-bottom-bar .container { grid-template-columns: repeat(2, 1fr); }
   .hero-stat { padding: 20px 16px; }
